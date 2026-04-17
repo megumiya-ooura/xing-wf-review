@@ -1,0 +1,397 @@
+.revico-star[data-review-count="0"] {
+    display: none;
+}
+
+.revico-star .revico-logo {
+    color: #bbb;
+    font-size: 10px;
+    text-align: right;
+    margin-bottom: 30px !important;
+    background-image: url(../../img/revico_logo.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top -1px right 0;
+    padding: 2px 0 !important;
+    height: 19px;
+}
+
+.revico_yellow .revico-logo {
+    background-image: url(../../img/revico_logo_yellow.png);
+}
+
+.revico-star .revico-logo:before {
+    content: "Powered by";
+    color: #bbb;
+    font-size: 10px;
+    margin-right: 60px;
+}
+
+.revico-star .revico-review {
+    width: 1000px;
+    margin: 0 auto -42px;
+    font-size: 28px;
+    font-weight: bold;
+	background: url("../../img/review.png") no-repeat;
+	background-size: 28px;
+	background-position: top 9px left 0;
+}
+
+.revico-star .revico-review span{
+	margin-left: 40px;
+}
+
+    .revico-star .revico-review img {
+        width: 28px;
+        vertical-align: text-bottom;
+        margin-right: 5px;
+    }
+
+.revico-star .revico-star-graph {
+    background-color: #f5f5f5;
+}
+
+.revico-star .revico-star-graph {
+    padding: 20px 25px 60px;
+}
+
+.revico-star .revico-star-graph-wrapper {
+    width: 1000px;
+    margin: 0 auto !important;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/*５つ星部分*/
+.revico-star .starability-result {
+    background-image: url("../../img/star.png");
+    background-repeat: no-repeat;
+    background-size: auto;
+    width: 150px;
+    height: 35px;
+    background-position: left 0 top 0;
+}
+
+.revico_yellow .starability-result {
+    background-image: url("../../img/star_yellow.png");
+}
+
+.revico-star [data-rating="5"] {
+    background-position: left 0 top 0;
+}
+
+.revico-star [data-rating="4"] {
+    background-position: left 20% top 0;
+}
+
+.revico-star [data-rating="3"] {
+    background-position: left 40% top 0;
+}
+
+.revico-star [data-rating="2"] {
+    background-position: left 60% top 0;
+}
+
+.revico-star [data-rating="1"] {
+    background-position: left 80% top 0;
+}
+
+.revico-star [data-rating="0"] {
+    background-position: left 100% top 0;
+}
+
+.revico-star [data-rating="4.5"] {
+    background-image: url("../../img/star/star_half.png");
+    background-position: left 0 top 0;
+}
+
+.revico-star [data-rating="3.5"] {
+    background-image: url("../../img/star/star_half.png");
+    background-position: left 20% top 0;
+}
+
+.revico-star [data-rating="2.5"] {
+    background-image: url("../../img/star/star_half.png");
+    background-position: left 40% top 0;
+}
+
+.revico-star [data-rating="1.5"] {
+    background-image: url("../../img/star/star_half.png");
+    background-position: left 60% top 0;
+}
+
+.revico-star [data-rating="0.5"] {
+    background-image: url("../../img/star/star_half.png");
+    background-position: left 80% top 0;
+}
+
+.revico_yellow [data-rating="4.5"] {
+    background-image: url("../../img/star/star_half_yellow.png");
+    background-position: left 0 top 0;
+}
+
+.revico_yellow [data-rating="3.5"] {
+    background-image: url("../../img/star/star_half_yellow.png");
+    background-position: left 20% top 0;
+}
+
+.revico_yellow [data-rating="2.5"] {
+    background-image: url("../../img/star/star_half_yellow.png");
+    background-position: left 40% top 0;
+}
+
+.revico_yellow [data-rating="1.5"] {
+    background-image: url("../../img/star/star_half_yellow.png");
+    background-position: left 60% top 0;
+}
+
+.revico_yellow [data-rating="0.5"] {
+    background-image: url("../../img/star/star_half_yellow.png");
+    background-position: left 80% top 0;
+}
+
+.revico-star .revico-star-block {
+    display: flex;
+    align-items: center;
+}
+
+.revico-star .revico-star-block--rate {
+    transform: scale(0.6);
+    transform-origin: left;
+    margin-right: 10px;
+    position: relative;
+    top: 4px;
+}
+
+.revico-star .revico-star-block {
+    display: flex;
+    align-items: center;
+}
+
+.revico-star .revico-star-block--rate + div {
+    font-weight: bold;
+    margin-left: -60px;
+}
+
+.revico-star .revico-widget {
+    font-family: "open sans", "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "YuGothic Medium", "游ゴシック", "Yu Gothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
+}
+
+    .revico-star .revico-widget ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+.revico-star .revico-star-block {
+    display: flex;
+    align-items: center;
+}
+
+.revico-star-block--title {
+    font-size: 16px;
+    margin-left: -65px;
+}
+
+.revico-widget a.revico-read-more-review {
+    font-size: 14px;
+    color: inherit;
+    text-decoration: underline;
+	margin-top: 3px;
+}
+
+.revico-star-block--total {
+    color: #222;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 10px;
+	margin-top: 3px;
+}
+
+.revico-star-block--caption {
+    font-size: 34px;
+    font-weight: bold;
+    position: relative;
+    top: -4px;
+    margin-left: 10px;
+}
+/*graph*/
+.revico-star .revico-star-graph-wrapper .revico-star-graph-label {
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 5px;
+}
+
+    .revico-star .revico-star-graph-wrapper .revico-star-graph-label span {
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+.revico-star .revico-star-block-wrapper {
+    margin-right: 60px;
+}
+
+.revico-star .revico-star-graph-wrapper .revico-star-block {
+    position: relative;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.revico-star .revico-star-graph-wrapper .revico-star-graph-list {
+    font-size: 12px;
+}
+
+.revico-star-graph-list-row--rate {
+    font-size: 10px;
+}
+
+.revico-star .revico-star-graph-wrapper .revico-star-graph-list--row {
+    display: flex;
+    align-items: center;
+    line-height: 20px;
+    margin-bottom: 5px;
+}
+
+    .revico-star .revico-star-graph-wrapper .revico-star-graph-list--row a {
+        color: #222;
+        margin-right: 10px;
+    }
+
+.revico-star .revico-star-graph-wrapper .revico-star-graph-list--row-link {
+    text-decoration: none;
+}
+
+    .revico-star .revico-star-graph-wrapper .revico-star-graph-list--row-link span {
+        color: #7b7b7b;
+        margin-right: 3px;
+    }
+
+.revico-star .revico-star-graph-wrapper .revico-star-graph-list--row-container {
+    width: 180px;
+    height: 5px;
+    background-color: #ccc;
+}
+
+.revico-star .revico-star-graph-wrapper .revico-star-graph-list--row-container-bar {
+    background-color: #444;
+    height: 5px;
+}
+
+.revico_yellow .revico-star-graph-wrapper .revico-star-graph-list--row-container-bar {
+    background-color: #e6c800;
+}
+
+.revico-star .revico-star-graph-wrapper .revico-star-graph-list-row--rate {
+    margin-left: 6px;
+    text-align: right;
+}
+a.revico-star-graph-list--row-link.revico-star-graph-list--row-link-bar {
+    width: 100%;
+}
+.revico-widget .revico-evaluation-graph-wrapper {
+    width: 900px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.revico-evaluation-graph-wrapper .revico-evaluation-graph--title {
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.revico-evaluation-graph-wrapper .revico-evaluation-graph-score {
+    display: flex;
+}
+
+.revico-evaluation-graph-wrapper .revico-evaluation-graph-score--scale {
+    height: 7px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    border-left: 1px solid #f5f5f5;
+    border-right: 0px;
+}
+
+.revico-evaluation-graph-wrapper .revico-evaluation-graph-score > .revico-evaluation-graph-score--scale:first-child {
+    border-left: 1px solid #ccc;
+}
+
+.revico-evaluation-graph-wrapper .revico-evaluation-graph-score > .revico-evaluation-graph-score--scale:last-child {
+    border-right: 1px solid #ccc;
+}
+
+.revico-evaluation-graph-wrapper .revico-evaluation-graph-score-caption {
+    display: flex;
+    justify-content: space-between;
+}
+
+.revico-evaluation-graph-wrapper .revico-evaluation-graph-score-caption--lowest,
+.revico-evaluation-graph-wrapper .revico-evaluation-graph-score-caption--highest {
+    font-size: 12px;
+}
+
+@media screen and (max-width: 768px) {
+    .revico-star .revico-logo {
+        height: auto;
+        width: 96%;
+    }
+
+    .revico-star .revico-review {
+        width: 92%;
+        margin: 0 auto;
+        font-size: 19px;
+        font-weight: bold;
+        margin-bottom: 30px;
+		background-size: 19px;
+		background-position: top 7px left 0;
+    }
+	
+	.revico-star .revico-review span{
+		margin-left: 28px;
+	}
+
+    .revico-star .revico-star-graph {
+        padding: 10px 0 30px;
+    }
+
+    .revico-star .revico-star-graph-wrapper {
+        width: 92%;
+        display: block;
+    }
+
+        .revico-star .revico-star-graph-wrapper > div,
+        .revico-star .revico-star-graph-wrapper > ul {
+            width: 74%;
+            margin: 0 auto;
+        }
+
+        .revico-star .revico-star-graph-wrapper .revico-star-graph-list--row-container {
+            width: 100%;
+        }
+
+    .revico-star-block--title {
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .revico-star-block--total {
+        font-size: 12px;
+    }
+
+    .revico-widget a.revico-read-more-review {
+        font-size: 12px;
+        color: inherit;
+    }
+
+    .revico-star-block--caption {
+        font-size: 28px;
+        top: -5px;
+    }
+    .revico-widget .revico-evaluation-graph-wrapper {
+        width: 60%;
+    }
+}

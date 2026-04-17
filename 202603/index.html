@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WF提案 インデックス｜シンフラワー 選び方コンテンツ導線強化</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: "游明朝", "Yu Mincho", YuMincho, "Hiragino Mincho ProN", serif;
+    background: #f5f0eb;
+    color: #293742;
+    min-height: 100vh;
+  }
+
+  /* ── HEADER ── */
+  .idx-header {
+    background: linear-gradient(135deg, #293742 0%, #1a2530 100%);
+    color: #fff;
+    padding: 40px 24px 32px;
+    text-align: center;
+    border-bottom: 4px solid #c1a278;
+  }
+  .idx-header .brand {
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    color: #c1a278;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+  .idx-header h1 {
+    font-size: clamp(20px, 4vw, 30px);
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 10px;
+  }
+  .idx-header .subtitle {
+    font-size: 14px;
+    color: #b0bec5;
+    line-height: 1.6;
+  }
+  .idx-header .badge-row {
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .idx-header .badge {
+    background: rgba(193,162,120,0.2);
+    border: 1px solid #c1a278;
+    color: #c1a278;
+    font-size: 12px;
+    padding: 4px 12px;
+    border-radius: 20px;
+  }
+
+  /* ── INTRO BOX ── */
+  .idx-intro {
+    max-width: 860px;
+    margin: 32px auto 0;
+    padding: 0 20px;
+  }
+  .intro-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 24px 28px;
+    border-left: 5px solid #B10A0A;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  }
+  .intro-card h2 {
+    font-size: 16px;
+    color: #B10A0A;
+    margin-bottom: 12px;
+    letter-spacing: 0.05em;
+  }
+  .intro-card p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #444;
+    font-family: "游ゴシック", "Yu Gothic", YuGothic, sans-serif;
+  }
+
+  /* ── GA4 DATA BOX ── */
+  .idx-data {
+    max-width: 860px;
+    margin: 20px auto 0;
+    padding: 0 20px;
+  }
+  .data-card {
+    background: #293742;
+    color: #fff;
+    border-radius: 10px;
+    padding: 20px 28px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+  }
+  .data-card .label {
+    font-size: 12px;
+    color: #b0bec5;
+    margin-bottom: 4px;
+    font-family: "游ゴシック", "Yu Gothic", YuGothic, sans-serif;
+  }
+  .data-card .value {
+    font-size: 22px;
+    font-weight: 700;
+    color: #c1a278;
+  }
+  .data-card .unit {
+    font-size: 12px;
+    color: #ccc;
+    margin-left: 4px;
+  }
+  .data-card .divider {
+    width: 1px;
+    height: 40px;
+    background: rgba(255,255,255,0.15);
+  }
+  .data-card .caption {
+    font-size: 13px;
+    color: #ccc;
+    flex: 1;
+    min-width: 200px;
+    font-family: "游ゴシック", "Yu Gothic", YuGothic, sans-serif;
+    line-height: 1.6;
+  }
+
+  /* ── STRATEGY SUMMARY ── */
+  .idx-strategy {
+    max-width: 860px;
+    margin: 24px auto 0;
+    padding: 0 20px;
+  }
+  .strategy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 10px;
+  }
+  .strat-chip {
+    background: #fff;
+    border-radius: 8px;
+    padding: 14px 16px;
+    border-top: 3px solid #27ae60;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.07);
+    text-align: center;
+  }
+  .strat-chip .num {
+    font-size: 20px;
+    font-weight: 700;
+    color: #B10A0A;
+    margin-bottom: 6px;
+  }
+  .strat-chip .name {
+    font-size: 12px;
+    color: #293742;
+    line-height: 1.5;
+    font-family: "游ゴシック", "Yu Gothic", YuGothic, sans-serif;
+  }
+
+  /* ── PAGES ── */
+  .idx-pages {
+    max-width: 860px;
+    margin: 32px auto 40px;
+    padding: 0 20px;
+  }
+  .idx-pages h2 {
+    font-size: 15px;
+    color: #293742;
+    letter-spacing: 0.1em;
+    margin-bottom: 16px;
+    padding-left: 10px;
+    border-left: 3px solid #c1a278;
+    font-family: "游ゴシック", "Yu Gothic", YuGothic, sans-serif;
+  }
+  .pages-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .page-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    overflow: hidden;
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .page-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+  }
+  .page-card a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .page-card .side-accent {
+    width: 6px;
+    flex-shrink: 0;
+  }
+  .page-card.top    .side-accent { background: #B10A0A; }
+  .page-card.product .side-accent { background: #c1a278; }
+  .page-card.choice  .side-accent { background: #27ae60; }
+  .page-card.list    .side-accent { background: #293742; }
+
+  .page-card .card-body {
+    flex: 1;
+    padding: 18px 20px;
+  }
+  .page-card .page-type {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #999;
+    margin-bottom: 4px;
+    font-family: "游ゴシック", "Yu Gothic", YuGothic, sans-serif;
+  }
+  .page-card .page-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #293742;
+    margin-bottom: 8px;
+  }
+  .page-card .page-desc {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.6;
+    font-family: "游ゴシック", "Yu Gothic", YuGothic, sans-serif;
+    margin-bottom: 10px;
+  }
+  .page-card .施策-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .page-card .施策-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: #f0faf4;
+    border: 1px solid #27ae60;
+    color: #1a7a44;
+    font-size: 12px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-family: "游ゴシック", "Yu Gothic", YuGothic, sans-serif;
+  }
+  .page-card .施策-tag .dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: #27ae60;
+  }
+
+  .page-card .card-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    color: #ccc;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+  .page-card:hover .card-arrow {
+    color: #B10A0A;
+  }
+
+  /* ── NOTE ── */
+  .idx-note {
+    max-width: 860px;
+    margin: 0 auto 48px;
+    padding: 0 20px;
+  }
+  .note-box {
+    background: #fffbf5;
+    border: 1px dashed #c1a278;
+    border-radius: 8px;
+    padding: 16px 20px;
+    font-size: 13px;
+    color: #666;
+    font-family: "游ゴシック", "Yu Gothic", YuGothic, sans-serif;
+    line-height: 1.7;
+  }
+  .note-box strong { color: #B10A0A; }
+
+  /* ── FOOTER ── */
+  .idx-footer {
+    background: #293742;
+    color: #888;
+    text-align: center;
+    padding: 20px;
+    font-size: 12px;
+    font-family: "游ゴシック", "Yu Gothic", YuGothic, sans-serif;
+  }
+
+  @media (max-width: 600px) {
+    .page-card a { flex-direction: column; }
+    .page-card .side-accent { width: 100%; height: 5px; }
+    .page-card .card-arrow { display: none; }
+    .data-card .divider { display: none; }
+  }
+
+  .idx-all-strategies {
+    background: #fff;
+    border-radius: 8px;
+    border-left: 4px solid #27ae60;
+    padding: 18px 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+  }
+  .idx-strat-note {
+    font-size: 12px;
+    color: #27ae60;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-family: "Yu Gothic","游ゴシック",sans-serif;
+    letter-spacing: 0.05em;
+  }
+  .idx-strat-list {
+    list-style: none;
+    padding: 0; margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .idx-strat-list li {
+    font-size: 13px;
+    color: #444;
+    font-family: "Yu Gothic","游ゴシック",sans-serif;
+    line-height: 1.5;
+    padding-left: 4px;
+    border-bottom: 1px solid #f0ebe3;
+    padding-bottom: 8px;
+  }
+  .idx-strat-list li:last-child { border-bottom: none; padding-bottom: 0; }
+  .strat-num {
+    display: inline-block;
+    background: #B10A0A;
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 1px 8px;
+    border-radius: 3px;
+    margin-right: 6px;
+    font-family: "Yu Gothic","游ゴシック",sans-serif;
+  }
+  .page-strat-list {
+    list-style: none;
+    padding: 0; margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .page-strat-list li {
+    font-size: 13px;
+    color: #555;
+    font-family: "Yu Gothic","游ゴシック",sans-serif;
+    line-height: 1.5;
+    padding-left: 12px;
+    position: relative;
+  }
+  .page-strat-list li::before {
+    content: "▸";
+    color: #27ae60;
+    position: absolute;
+    left: 0;
+    font-size: 11px;
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="idx-header">
+  <div class="brand">Xing Flower Inc. | WF Proposal</div>
+  <h1>選び方コンテンツへの<br>導線強化 WF提案</h1>
+
+</header>
+
+<!-- INTRO -->
+
+
+<!-- GA4 DATA -->
+
+
+<!-- STRATEGY CHIPS -->
+
+
+<!-- PAGE LINKS -->
+<section class="idx-pages">
+<div class="note-box" style="margin-bottom:16px;">
+    <strong>【確認方法】</strong>
+    下記各ページリンクをクリックすると、実際の既存ページに追加セクションが埋め込まれた状態をご確認できます。<br>
+    <strong>緑の破線枠</strong>で囲まれたセクションが新規追加エリアです。それ以外の部分は既存のページデザインそのままです。
+  </div>
+  <h2>▶ 施策一覧</h2>
+
+  <div class="idx-all-strategies">
+    <p class="idx-strat-note">✦ 全施策一覧（施策①-1・①-2は全ページ共通）</p>
+    <ul class="idx-strat-list">
+      <li><span class="strat-num">施策①-1</span> グローバルナビ — 全ページのナビゲーション（初めての方へ）に選び方ガイドリンクを追加【全ページ共通】</li>
+      <li><span class="strat-num">施策①-2</span> フッター — 全ページのフッターナビに「選び方ガイド」セクションを追加【全ページ共通】</li>
+      <li><span class="strat-num">施策②</span> トップページ — ランキング直上に3カード「選び方ガイド」セクションを追加</li>
+      <li><span class="strat-num">施策③</span> 商品ページ・一覧ページ — Instagram上フルワイドバナー ＋ サイドバーウィジェットを追加</li>
+      <li><span class="strat-num">施策④</span> 選び方ページ — ページ上部に他の選び方ページへのクロスリンクバーを追加</li>
+    </ul>
+  </div>
+
+  <h2>▶ 各ページのWF提案を確認する</h2>
+
+  <div class="pages-list">
+
+    <div class="page-card top">
+      <a href="./トップページ.html" target="_blank" rel="noopener noreferrer">
+        <div class="side-accent"></div>
+        <div class="card-body">
+          <div class="page-type">Top Page</div>
+          <div class="page-title">トップページ</div>
+          <ul class="page-strat-list">
+            <li>施策② ランキング上に選び方3カードセクションを追加</li>
+          </ul>
+        </div>
+        <div class="card-arrow">›</div>
+      </a>
+    </div>
+
+    <div class="page-card product">
+      <a href="./商品ページ.html" target="_blank" rel="noopener noreferrer">
+        <div class="side-accent"></div>
+        <div class="card-body">
+          <div class="page-type">Product Page</div>
+          <div class="page-title">商品ページ</div>
+          <ul class="page-strat-list">
+            <li>施策③ Instagram上フルワイドバナーを追加（横幅いっぱい）</li>
+            <li>施策③ サイドバーに選び方ガイドウィジェットを追加</li>
+          </ul>
+        </div>
+        <div class="card-arrow">›</div>
+      </a>
+    </div>
+
+    <div class="page-card choice">
+      <a href="./選び方ページ.html" target="_blank" rel="noopener noreferrer">
+        <div class="side-accent"></div>
+        <div class="card-body">
+          <div class="page-type">How-to-Choose Page</div>
+          <div class="page-title">選び方ページ（お花の種類から選ぶ）</div>
+          <ul class="page-strat-list">
+            <li>施策④ ページ上部に他の選び方ページへのクロスリンクバーを追加</li>
+          </ul>
+        </div>
+        <div class="card-arrow">›</div>
+      </a>
+    </div>
+
+    <div class="page-card list">
+      <a href="./一覧ページ.html" target="_blank" rel="noopener noreferrer">
+        <div class="side-accent"></div>
+        <div class="card-body">
+          <div class="page-type">Category List Page</div>
+          <div class="page-title">一覧ページ</div>
+          <ul class="page-strat-list">
+            <li>施策③ Instagram上フルワイドバナーを追加（横幅いっぱい）</li>
+            <li>施策③ サイドバーに選び方ガイドウィジェットを追加</li>
+          </ul>
+        </div>
+        <div class="card-arrow">›</div>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="idx-footer">
+  WF提案資料 | シンフラワー株式会社 選び方コンテンツ導線強化プロジェクト | 2026.03
+</footer>
+
+</body>
+</html>

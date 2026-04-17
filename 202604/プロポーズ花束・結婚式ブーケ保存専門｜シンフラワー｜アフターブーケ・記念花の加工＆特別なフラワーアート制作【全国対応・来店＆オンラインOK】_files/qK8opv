@@ -1,0 +1,64 @@
+(function(){
+  function getCookie(name) {
+    const cookies = document.cookie.split('; ').reduce((acc, cookie) => {
+      const [key, ...valueParts] = cookie.split('=');
+      if (key) {
+        acc[key] = decodeURIComponent(valueParts.join('='));
+      }
+      return acc;
+    }, {});
+
+    return cookies[name] || '';
+  }
+
+  const lm_params = new URLSearchParams(window.location.search);
+  let lm_param = "";
+  const params = [
+          "gclid",
+          "gbraid",
+          "wbraid",
+          "fbclid",
+          "lclid",
+          "yclid",
+          "utm_source",
+          "placement_type",
+          "utm_campaign",
+          "adgroup",
+      ];
+  params.forEach((param) => {
+    if (lm_params.get(param)) {
+      lm_param = lm_param + "&" + param + "=" + encodeURIComponent(lm_params.get(param));
+    }
+  });
+  if (lm_param != "") {
+    localStorage.setItem("lm_param", lm_param);
+  }
+  if (lm_param == "") {
+    lm_param = localStorage.getItem("lm_param");
+    if (lm_param == null) {
+      lm_param = "";
+    }
+  }
+
+  const lm_links = document.querySelectorAll(
+    'a[href^="https://liff.line.me/"][href*="/landing?follow=%40"]'
+  );
+  lm_links.forEach((link) => {
+    link.href += lm_param;
+
+    link.addEventListener('click', (e) => {
+      const fbp = getCookie('_fbp');
+      const fbc = getCookie('_fbc');
+
+      const urlObj = new URL(link.href);
+      if (fbp) {
+        urlObj.searchParams.set('fbp', fbp);
+      }
+      if (fbc) {
+        urlObj.searchParams.set('fbc', fbc);
+      }
+
+      link.href = urlObj.href;
+    });
+  });
+})();

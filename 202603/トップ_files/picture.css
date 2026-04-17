@@ -1,0 +1,524 @@
+#revico-picture .revico-logo {
+    color: #bbb;
+    font-size: 10px;
+    text-align: right;
+    margin-bottom: 30px !important;
+    background-image: url(../../img/revico_logo.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top -1px right 0;
+    padding: 2px 0 !important;
+    height: 19px;
+}
+
+.revico_yellow .revico-logo {
+    background-image: url(../../img/revico_logo_yellow.png);
+}
+
+#revico-picture .revico-logo:before {
+    content: "Powered by";
+    color: #bbb;
+    font-size: 10px;
+    margin-right: 60px;
+}
+
+.revico-horizontal_scroll::-webkit-scrollbar {
+    height: 6px;
+}
+/*スクロールバーのレール*/
+.revico-horizontal_scroll::-webkit-scrollbar-track {
+    border-radius: 30px;
+    background: #e5e5e5;
+}
+/*スクロールバーのつまみ*/
+.revico-horizontal_scroll::-webkit-scrollbar-thumb {
+    border-radius: 30px;
+    background: #444;
+}
+
+#revico-picture {
+    margin: 0 auto;
+    margin: 0 auto 60px;
+    color: #444;
+    font-family: "open sans", "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "YuGothic Medium", "游ゴシック", "Yu Gothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
+}
+
+    #revico-picture .revico-picture-slide-box {
+        padding-bottom: 20px;
+        column-count: 5;
+        column-gap: 0;
+        margin-right: -3px;
+    }
+
+    #revico-picture .revico-logo img {
+        height: 15px;
+        margin-left: 6px;
+    }
+
+/*５つ星部分*/
+.revico-star-block .starability-result {
+    background-image: url("../../img/star.png");
+    background-repeat: no-repeat;
+    background-size: auto;
+    width: 150px;
+    height: 35px;
+    background-position: left 0 top 0;
+}
+
+.revico_yellow .revico-star-block .starability-result {
+    background-image: url("../../img/star_yellow.png");
+}
+
+.revico-star-block [data-rating="5"] {
+    background-position: left 0 top 0;
+}
+
+.revico-star-block [data-rating="4"] {
+    background-position: left 20% top 0;
+}
+
+.revico-star-block [data-rating="3"] {
+    background-position: left 40% top 0;
+}
+
+.revico-star-block [data-rating="2"] {
+    background-position: left 60% top 0;
+}
+
+.revico-star-block [data-rating="1"] {
+    background-position: left 80% top 0;
+}
+
+.revico-star-block [data-rating="0"] {
+    background-position: left 100% top 0;
+}
+
+.revico-star-block [data-rating="4.5"] {
+    background-image: url("../../img/star/star_half.png");
+    background-position: left 0 top 0;
+}
+
+.revico-star-block [data-rating="3.5"] {
+    background-image: url("../../img/star/star_half.png");
+    background-position: left 20% top 0;
+}
+
+.revico-star-block [data-rating="2.5"] {
+    background-image: url("../../img/star/star_half.png");
+    background-position: left 40% top 0;
+}
+
+.revico-star-block [data-rating="1.5"] {
+    background-image: url("../../img/star/star_half.png");
+    background-position: left 60% top 0;
+}
+
+.revico-star-block [data-rating="0.5"] {
+    background-image: url("../../img/star/star_half.png");
+    background-position: left 80% top 0;
+}
+
+.revico_yellow .revico-star-block [data-rating="4.5"] {
+    background-image: url("../../img/star/star_half_yellow.png");
+    background-position: left 0 top 0;
+}
+
+.revico_yellow .revico-star-block [data-rating="3.5"] {
+    background-image: url("../../img/star/star_half_yellow.png");
+    background-position: left 20% top 0;
+}
+
+.revico_yellow .revico-star-block [data-rating="2.5"] {
+    background-image: url("../../img/star/star_half_yellow.png");
+    background-position: left 40% top 0;
+}
+
+.revico_yellow .revico-star-block [data-rating="1.5"] {
+    background-image: url("../../img/star/star_half_yellow.png");
+    background-position: left 60% top 0;
+}
+
+.revico_yellow .revico-star-block [data-rating="0.5"] {
+    background-image: url("../../img/star/star_half_yellow.png");
+    background-position: left 80% top 0;
+}
+
+.revico-star-block {
+    display: flex;
+    align-items: center;
+}
+
+.revico-star-block--rate {
+    transform: scale(0.6);
+    transform-origin: left;
+    margin-right: 10px;
+}
+
+.revico-star-block--rate + .revico-star-block--title {
+    font-weight: bold;
+    margin-left: -60px;
+}
+
+#revico-picture .revico-star-block--rate + .revico-star-block--title {
+    margin-top: -5px;
+}
+
+.revico-horizontal_scroll {
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    padding: 0;
+    display: -ms-flexbox;
+    display: flex;
+    list-style: none;
+    overflow-y: hidden;
+}
+
+    .revico-horizontal_scroll > li:not(:last-child) {
+        margin-right: 8px;
+    }
+
+    .revico-horizontal_scroll img {
+        vertical-align: bottom;
+        height: auto;
+    }
+
+.revico-review-picture-slide-wrapper {
+    margin-bottom: 20px;
+    max-height: 800px;
+    position: relative;
+    overflow: hidden;
+}
+
+.revico-review-picture-detail--more {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    margin: 0px;
+    padding: 6em 0px 0px 0;
+    background-image: -moz-linear-gradient(top, transparent, white);
+    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, transparent),color-stop(1, white));
+}
+
+    .revico-review-picture-detail--more span {
+        background-color: #fff;
+        display: inline-block;
+        width: 100%;
+        padding: 15px 0;
+        font-size: 14px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+        .revico-review-picture-detail--more span:after {
+            content: "";
+            background: url(../../img/moretext.png) no-repeat;
+            height: 1rem;
+            width: 1rem;
+            display: inline-block;
+            background-position: 0.5rem 0.55rem;
+            background-size: 50%;
+        }
+
+.revico-picture-slide-img-wrapper {
+    width: 285px;
+    height: 210px;
+    overflow: hidden;
+    position: relative;
+    background-color: #f5f5f5;
+}
+
+    .revico-picture-slide-img-wrapper img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        max-width: 100%;
+        max-height: 100%;
+        cursor: pointer;
+    }
+
+.revico-horizontal_scroll.tile {
+    display: block;
+    overflow-x: auto;
+}
+
+.tile .revico-picture-slide-item {
+    display: inline-block;
+}
+
+.tile .revico-picture-slide-img-wrapper {
+    width: auto;
+    height: auto;
+}
+
+    .tile .revico-picture-slide-img-wrapper img {
+        position: inherit;
+        transform: none;
+        width: 100%;
+    }
+
+.tile.revico-horizontal_scroll > li:not(:last-child) {
+    margin-right: 3px;
+}
+
+/*------モーダル------*/
+.revico-star-block {
+    display: flex;
+    align-items: center;
+}
+
+.revico-star-block--rate {
+    transform: scale(0.6);
+    transform-origin: left;
+    margin-right: 10px;
+}
+
+.revico-modal.revico-modal__close:hover {
+    opacity: 0.6;
+}
+
+.revico-modal.revico-modal__close:after, .revico-modal.revico-modal__close:before {
+    display: none;
+}
+
+.revico-modal-content {
+    font-family: "open sans", "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "YuGothic Medium", "游ゴシック", "Yu Gothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
+    color: #595959;
+    font-size: 12px;
+}
+
+    .revico-modal-content ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .revico-modal-content .revico-review-picture-modal-detail button {
+        background-color: #444;
+        color: #fff;
+        padding: 6px 0;
+        font-size: 14px;
+        text-align: center;
+        border-radius: 2px;
+        border: none;
+        cursor: pointer;
+        height: 40px;
+        margin-top: 25px;
+    }
+
+    .revico-modal-content button:hover {
+        opacity: 0.7;
+        transition: 0.6s;
+    }
+
+    .revico-modal-content .revico-review-picture-modal-wrapper {
+        padding-bottom: 20px;
+    }
+
+    .revico-modal-content .revico-review-modal-product-name {
+        display: none;
+    }
+
+    .revico-modal-content .revico-review-picture-modal-product-image img {
+        width: 84%;
+        height: 84%;
+    }
+
+.revico-review-modal-detail--reviewer {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.revico-modal-content .revico-review-modal-detail--product-name {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.revico-modal-content .revico-review-modal-detail--reviewer {
+    font-weight: bold;
+}
+
+.revico-review-modal-detail--reviewer-name {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.revico-review-modal-detail--reviewer-purchased {
+    display: inline-block;
+    font-size: 10px;
+    background-color: #f5f5f5;
+    padding: 2px 6px;
+    border-radius: 10px;
+    white-space: nowrap;
+}
+
+.revico-modal-content .revico-review-modal-detail--date {
+    margin-bottom: 5px;
+}
+
+.revico-modal-content .revico-review-modal-detail--comment {
+    margin-bottom: 20px;
+}
+
+.revico-modal-content .revico-review-modal-detail--reference-cnt {
+    margin-bottom: 5px;
+}
+
+.revico-modal-content .revico-review-modal-detail--reference-btn {
+    margin-bottom: 20px;
+}
+
+.revico-modal__inner {
+    width: fit-content;
+    min-width: 400px;
+}
+
+.revico-review-picture-modal-product-image {
+    margin-right: 0;
+    text-align: center;
+    background-color: #f5f5f5;
+    width: 100%;
+    margin-right: 40px;
+    margin-bottom: 15px;
+}
+
+.revico-modal-content .revico-review-picture-modal-product-image img,
+.revico-review-picture-modal-product-image img,
+.revico-review-picture-modal-product-image video {
+    max-width: 100%;
+    max-height: 50vh;
+    width: auto;
+    height: auto;
+    text-align: center;
+}
+
+.revico-review-picture-modal-detail .revico-star-block--review-title {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.revico-modal__inner.revico-picture-modal-product {
+    max-width: 500px;
+    width: 100%;
+    /*position: relative;*/
+}
+
+    .revico-modal__inner.revico-picture-modal-product .revico-modal-content {
+        overflow: visible;
+    }
+
+a.revico-read-more-review {
+    text-decoration: none;
+    color: white;
+}
+
+@media screen and (max-width: 768px) {
+    #revico-picture {
+        width: 96%;
+        padding: 0 2%;
+    }
+
+        #revico-picture .revico-logo {
+            height: auto;
+            width: 100%;
+        }
+
+    .revico-modal-content .revico-review-picture-modal-wrapper {
+        display: block;
+        width: 100%;
+    }
+
+    .revico-review-picture-modal-detail .revico-star-block--review-title {
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    .revico-modal-content .revico-review-modal-product-name {
+        display: block;
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .revico-modal-content .revico-review-modal-detail--product-name {
+        display: none;
+    }
+
+    .revico-modal-content .revico-review-modal-product-image--main span {
+        width: 19px !important;
+        height: 19px !important;
+    }
+
+    .revico-modal-content .revico-review-modal-product-image--thumnail {
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+    }
+
+    .revico-modal-content .revico-review-picture-modal-detail {
+        width: 100%;
+    }
+
+    #revico-picture .revico-picture-slide-box {
+        column-count: 3;
+    }
+
+    .tile .revico-picture-slide-img-wrapper img {
+        position: inherit;
+        transform: none;
+    }
+
+    .revico-modal__inner {
+        min-width: 90%;
+    }
+
+    .revico-modal__inner.revico-picture-modal-product {
+        max-width: 90%;
+    }
+
+    .revico-modal-content .revico-review-picture-modal-product-image img
+    .revico-modal-content .revico-review-picture-modal-product-image video {
+        max-width: 100%;
+    }
+}
+
+@media screen and (min-width:460px) and (max-width:768px) {
+    #revico-picture .revico-picture-slide-box {
+        column-count: 4;
+    }
+}
+
+.revico-review-picture-no-comment {
+    width: 100%;
+    text-align: center;
+}
+
+/* 動画再生ボタン風CSS */
+#revico-picture .revico-picture-slide-item .revico-movie-play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+}
+
+    #revico-picture .revico-picture-slide-item .revico-movie-play-button::after {
+        margin: 0px 0px 0px 2px;
+        content: "";
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 10px 0 10px 15px;
+        border-color: transparent transparent transparent white;
+    }

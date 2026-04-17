@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1300">
+<title>WF提案 | シンフラワー 選び方コンテンツへの導線強化</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Yu Gothic','ヒラギノ角ゴシック',sans-serif;background:#eaeaea;color:#333;font-size:14px;}
+
+/* ===== DOC HEADER ===== */
+.doc-header{background:#293742;color:#fff;padding:18px 32px;display:flex;justify-content:space-between;align-items:center;}
+.doc-header h1{font-size:17px;font-weight:bold;letter-spacing:0.5px;}
+.doc-meta{font-size:11px;color:rgba(255,255,255,0.6);margin-top:4px;}
+.doc-badge{background:#c1a278;color:#293742;font-size:11px;font-weight:bold;padding:5px 14px;border-radius:20px;white-space:nowrap;}
+
+/* ===== TAB NAV ===== */
+.tab-nav{background:white;border-bottom:3px solid #B10A0A;display:flex;padding:0 24px;position:sticky;top:0;z-index:200;box-shadow:0 2px 10px rgba(0,0,0,0.12);overflow-x:auto;}
+.tab-btn{padding:13px 18px;border:none;background:none;font-size:12.5px;color:#666;cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-3px;white-space:nowrap;transition:all 0.2s;font-family:inherit;}
+.tab-btn:hover{color:#B10A0A;}
+.tab-btn.active{color:#B10A0A;border-bottom-color:#B10A0A;font-weight:bold;}
+
+/* ===== TAB PANELS ===== */
+.tab-panel{display:none;padding:24px;max-width:1320px;margin:0 auto;}
+.tab-panel.active{display:block;}
+
+/* ===== OVERVIEW ===== */
+.ov-intro{background:white;border-radius:8px;padding:20px 24px;margin-bottom:20px;box-shadow:0 2px 8px rgba(0,0,0,0.08);}
+.ov-intro p{font-size:13px;line-height:1.8;color:#444;margin-bottom:8px;}
+.ov-highlight{background:#fff8e1;border:1px solid #ffc107;border-radius:5px;padding:10px 16px;font-size:13px;margin-top:10px;color:#5a4000;}
+.ov-table-wrap{background:white;border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.08);}
+table{width:100%;border-collapse:collapse;}
+th{background:#293742;color:white;padding:12px 16px;font-size:12.5px;font-weight:bold;text-align:left;}
+td{padding:12px 16px;border-bottom:1px solid #f0f0f0;font-size:13px;vertical-align:top;line-height:1.6;}
+tr:last-child td{border-bottom:none;}
+tr:hover td{background:#fafafa;}
+.pri-red{color:#B10A0A;font-size:15px;}
+
+/* ===== BADGES ===== */
+.badge{padding:3px 10px;border-radius:20px;font-size:11px;font-weight:bold;display:inline-block;}
+.b-low{background:#27ae60;color:white;}
+.b-mid{background:#e67e22;color:white;}
+.b-midlow{background:#f39c12;color:white;}
+.b-pri{background:#B10A0A;color:white;}
+
+/* ===== STRATEGY CARD ===== */
+.sc{background:white;border-radius:8px;overflow:hidden;margin-bottom:20px;box-shadow:0 2px 8px rgba(0,0,0,0.1);}
+.sc-hd{background:#293742;color:white;padding:13px 20px;display:flex;align-items:center;gap:12px;}
+.sc-hd h2{font-size:14px;flex:1;}
+.sc-grid{display:grid;grid-template-columns:repeat(3,1fr);}
+.sc-item{padding:13px 20px;border-right:1px solid #f0f0f0;border-bottom:1px solid #f0f0f0;}
+.sc-item:nth-child(3n){border-right:none;}
+.sc-label{font-size:10px;color:#999;letter-spacing:0.5px;margin-bottom:4px;}
+.sc-val{font-size:12.5px;color:#333;line-height:1.6;}
+
+/* ===== WF CONTAINER ===== */
+.wfc{background:white;border-radius:8px;overflow:hidden;margin-bottom:20px;box-shadow:0 2px 8px rgba(0,0,0,0.1);}
+.wfc-hd{background:#475f72;color:white;padding:10px 20px;font-size:12.5px;display:flex;align-items:center;justify-content:space-between;}
+.wfc-body{padding:20px;background:#f0f0f0;}
+
+/* ===== LEGEND ===== */
+.legend{display:flex;gap:16px;align-items:center;margin-bottom:14px;font-size:11.5px;color:#555;}
+.legend-item{display:flex;align-items:center;gap:5px;}
+.leg-new{width:16px;height:16px;border:2px dashed #27ae60;background:rgba(39,174,96,0.1);border-radius:3px;}
+.leg-ex{width:16px;height:16px;background:#e0e0e0;border:1px solid #ccc;border-radius:3px;}
+
+/* ===== BROWSER FRAME ===== */
+.browser{background:white;border-radius:8px;border:1px solid #ccc;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.15);}
+.browser-chrome{background:#ddd;padding:8px 12px;display:flex;align-items:center;gap:10px;border-bottom:1px solid #ccc;}
+.dots{display:flex;gap:5px;}
+.dot{width:11px;height:11px;border-radius:50%;}
+.d-r{background:#ff5f57;}
+.d-y{background:#ffbd2e;}
+.d-g{background:#28c840;}
+.url-bar{flex:1;background:white;border-radius:4px;padding:3px 10px;font-size:11px;color:#666;border:1px solid #ccc;}
+
+/* ===== SITE HEADER WF ===== */
+.sh{background:white;border-bottom:1px solid #eee;}
+.sh-main{display:flex;align-items:center;padding:8px 18px;gap:0;}
+.sh-logo{background:#293742;color:white;padding:7px 14px;font-size:12px;font-weight:bold;border-radius:3px;margin-right:18px;white-space:nowrap;line-height:1.3;}
+.sh-nav{display:flex;flex:1;}
+.sh-nav-item{padding:8px 12px;font-size:11.5px;color:#333;border-right:1px solid #f0f0f0;white-space:nowrap;}
+.sh-nav-active{background:#fff3f3;color:#B10A0A;font-weight:bold;display:flex;align-items:center;gap:3px;}
+.sh-right{display:flex;gap:8px;align-items:center;}
+.sh-icon{width:34px;height:34px;background:#f5f5f5;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;}
+.sh-tel{background:#293742;color:white;padding:5px 10px;border-radius:3px;font-size:10px;text-align:center;line-height:1.4;}
+.sh-bottom{background:#293742;display:flex;}
+.sh-bl{color:#c1a278;font-size:11px;padding:7px 14px;border-right:1px solid rgba(255,255,255,0.1);white-space:nowrap;}
+
+/* ===== DROPDOWN ===== */
+.dd-panel{background:white;border:1px solid #e0e0e0;border-top:none;padding:14px 18px;box-shadow:0 4px 12px rgba(0,0,0,0.12);}
+.dd-sec-title{font-size:11.5px;font-weight:bold;color:#B10A0A;padding-bottom:7px;border-bottom:1px solid #eee;margin-bottom:9px;}
+.dd-grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin-bottom:6px;}
+.dd-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;}
+.dd-link{background:#f9f9f9;border:1px solid #eee;padding:7px 9px;font-size:10.5px;color:#333;border-radius:3px;display:flex;align-items:center;gap:4px;}
+.dd-arr{color:#B10A0A;font-size:8px;}
+
+/* ===== NEW ELEMENT ===== */
+.wf-new{position:relative;border:2px dashed #27ae60!important;background:rgba(39,174,96,0.06)!important;border-radius:6px;}
+.wf-new-badge{position:absolute;top:-16px;left:0;background:#27ae60;color:white;font-size:9.5px;font-weight:bold;padding:2px 8px;border-radius:3px 3px 3px 0;white-space:nowrap;z-index:10;}
+
+/* ===== PAGE PLACEHOLDERS ===== */
+.p-slider{background:linear-gradient(135deg,#d8e8f0,#b8ccd8);height:180px;display:flex;align-items:center;justify-content:center;color:#6a8fa8;font-size:12px;border-radius:0;}
+.p-gray{background:#f0f0f0;height:60px;display:flex;align-items:center;justify-content:center;color:#aaa;font-size:11px;}
+.p-gray-tall{background:#f0f0f0;display:flex;align-items:center;justify-content:center;color:#aaa;font-size:11px;}
+
+/* ===== CARDS SECTION ===== */
+.sec-wrap{padding:16px 18px;}
+.sec-heading{font-size:16px;font-weight:bold;color:#293742;text-align:center;margin-bottom:4px;}
+.sec-sub{font-size:11.5px;color:#777;text-align:center;margin-bottom:14px;}
+.cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.card{border:1px solid #ddd;border-radius:8px;overflow:hidden;background:white;}
+.card-emoji{height:70px;display:flex;align-items:center;justify-content:center;font-size:32px;background:#fdf8f2;}
+.card-body{padding:11px 12px;}
+.card-title{font-size:12.5px;font-weight:bold;color:#293742;margin-bottom:4px;}
+.card-desc{font-size:10.5px;color:#666;line-height:1.5;margin-bottom:8px;}
+.card-cta{background:#B10A0A;color:white;padding:5px 12px;border-radius:20px;font-size:11px;display:inline-block;}
+
+/* ===== PRODUCT PAGE ===== */
+.prod-2col{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:16px 18px;}
+.prod-img{background:linear-gradient(135deg,#f0e8d8,#e0d0b8);height:260px;border-radius:6px;display:flex;align-items:center;justify-content:center;color:#a08060;font-size:12px;}
+.prod-title{font-size:15px;font-weight:bold;color:#293742;margin-bottom:4px;}
+.prod-price{color:#B10A0A;font-size:17px;font-weight:bold;margin-bottom:6px;}
+.prod-stars{color:#f39c12;font-size:13px;margin-bottom:10px;}
+.prod-desc{font-size:11.5px;color:#555;line-height:1.6;margin-bottom:14px;border-left:3px solid #c1a278;padding-left:9px;}
+.prod-order-btn{background:#B10A0A;color:white;padding:13px;border-radius:5px;text-align:center;font-size:14px;font-weight:bold;margin-bottom:8px;}
+.prod-consult-btn{background:#293742;color:white;padding:9px;border-radius:5px;text-align:center;font-size:12px;margin-bottom:14px;}
+
+/* ===== CROSSLINK ===== */
+.cl-bar{background:#fdf8f2;border:1px solid #e8e0d0;border-radius:6px;padding:11px 14px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+.cl-label{font-size:11.5px;color:#666;white-space:nowrap;}
+.cl-btn{padding:6px 14px;border:1px solid #c1a278;border-radius:20px;font-size:11.5px;color:#293742;background:white;display:inline-flex;align-items:center;gap:4px;}
+.cl-arr{color:#B10A0A;font-size:10px;}
+
+/* ===== CHOICE PAGE CONTENT ===== */
+.choice-content{padding:16px 18px;}
+.choice-title{font-size:18px;font-weight:bold;color:#293742;margin-bottom:5px;}
+.choice-intro{font-size:11.5px;color:#666;line-height:1.6;margin-bottom:14px;}
+.flower-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;}
+.flower-item{border:1px solid #eee;border-radius:5px;overflow:hidden;}
+.flower-img{height:55px;background:linear-gradient(135deg,#fce4e4,#f8c8c8);}
+.flower-name{padding:5px 7px;font-size:10px;color:#333;}
+
+/* ===== LIST / SIDEBAR ===== */
+.list-layout{display:grid;grid-template-columns:1fr 230px;gap:14px;padding:14px 18px;}
+.prod-grid-sm{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
+.prod-card-sm{border:1px solid #eee;border-radius:5px;overflow:hidden;}
+.prod-card-img{height:70px;background:linear-gradient(135deg,#f0e8d8,#e0d0b8);}
+.prod-card-info{padding:7px 8px;}
+.prod-card-name{font-size:11px;font-weight:bold;color:#293742;margin-bottom:2px;}
+.prod-card-price{font-size:10px;color:#B10A0A;}
+.sidebar-widget{border:1px solid #ddd;border-radius:6px;overflow:hidden;margin-bottom:12px;}
+.sw-hd{background:#293742;color:white;padding:9px 13px;}
+.sw-hd-title{font-size:12.5px;font-weight:bold;}
+.sw-hd-sub{font-size:10px;color:rgba(255,255,255,0.65);margin-top:2px;}
+.sw-body{padding:10px 12px;background:white;}
+.sw-link{display:flex;align-items:center;gap:7px;padding:8px 0;border-bottom:1px solid #f0f0f0;font-size:11.5px;color:#333;}
+.sw-link:last-child{border-bottom:none;}
+.sw-arr{color:#B10A0A;font-size:9px;}
+.sw-existing{opacity:0.5;}
+
+/* ===== IMPL BOX ===== */
+.impl-box{background:white;border-radius:8px;overflow:hidden;margin-bottom:20px;box-shadow:0 2px 8px rgba(0,0,0,0.08);}
+.impl-hd{background:#475f72;color:white;padding:10px 20px;font-size:12.5px;font-weight:bold;}
+.impl-body{padding:16px 20px;}
+.impl-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.impl-item h4{font-size:11px;color:#777;margin-bottom:5px;text-transform:uppercase;letter-spacing:0.5px;}
+.impl-item p{font-size:12.5px;color:#333;line-height:1.6;}
+.code-block{background:#1a1a2e;border-radius:6px;padding:13px 15px;font-size:11px;font-family:'Courier New',monospace;color:#d4d4d4;line-height:1.8;overflow-x:auto;margin-top:12px;}
+.code-block .t{color:#569cd6;}
+.code-block .a{color:#9cdcfe;}
+.code-block .v{color:#ce9178;}
+.code-block .c{color:#6a9955;}
+.code-block .s{color:#c3e88d;}
+
+/* ===== ANNOTATION ===== */
+.ann{background:#fffde7;border:1px solid #f9a825;border-radius:6px;padding:11px 15px;margin-top:14px;}
+.ann p{font-size:11.5px;color:#555;line-height:1.7;}
+.ann strong{color:#5a4000;}
+
+/* ===== RANKING PLACEHOLDER ===== */
+.rank-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:14px 18px;}
+.rank-item{border:1px solid #eee;border-radius:5px;overflow:hidden;background:white;}
+.rank-img{height:65px;background:linear-gradient(135deg,#f5f0e8,#ece4d4);}
+.rank-txt{padding:6px 8px;font-size:10px;color:#333;}
+
+</style>
+</head>
+<body>
+
+<!-- ===== DOCUMENT HEADER ===== -->
+<div class="doc-header">
+  <div>
+    <h1>シンフラワー｜選び方コンテンツへの導線強化　WF提案</h1>
+    <div class="doc-meta">作成日：2026年3月21日 ／ 対象：https://www.xing-flower.com ／ 全5施策 ／ 作成：めぐみや</div>
+  </div>
+  <div class="doc-badge">確定施策 全5案</div>
+</div>
+
+<!-- ===== TAB NAV ===== -->
+<div class="tab-nav">
+  <button class="tab-btn active" data-tab="0">📋 施策一覧</button>
+  <button class="tab-btn" data-tab="1">① グローバルナビ ★★★</button>
+  <button class="tab-btn" data-tab="2">② トップページ ★★★</button>
+  <button class="tab-btn" data-tab="3">③ 商品ページ ★★★</button>
+  <button class="tab-btn" data-tab="4">④ クロスリンク ★★☆</button>
+  <button class="tab-btn" data-tab="5">⑤ サイドバー ★★☆</button>
+</div>
+
+
+<!-- ========================================
+     TAB 0: 施策一覧（Overview）
+     ======================================== -->
+<div class="tab-panel active" data-panel="0">
+  <div class="ov-intro">
+    <p><strong>GA4ファネル分析（計測期間：2025/12/01〜2026/03/17）</strong>により、選び方ページ経由のCVRはブログ経由の<strong>4.1倍（1.2% vs 0.29%）</strong>であることが判明。選び方ページへの流入を増やすことが購入数増加に直結するため、以下5施策をサイト内導線強化として実施します。</p>
+    <div class="ov-highlight">📊 <strong>選び方ページ経由の商品ページ遷移率：19.4%</strong>（ブログ経由の約9倍）／ ブログ内CTAはすでに実施済み → 今回はオンサイト施策に特化</div>
+  </div>
+  <div class="ov-table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th><th>施策名</th><th>設置場所</th><th>実装難易度</th><th>優先順位</th><th>期待効果</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong style="color:#B10A0A;font-size:16px;">①</strong></td>
+          <td><strong>グローバルナビへの追加</strong><br><small style="color:#666">「初めての方へ」ドロップダウン末尾に◆選び方ガイド3リンク</small></td>
+          <td>全ページ共通ヘッダー</td>
+          <td><span class="badge b-low">低</span></td>
+          <td><span class="pri-red">★★★</span> 最優先</td>
+          <td>全流入ユーザーへの常時接点。メニュー意欲の高い導線のためCTR高</td>
+        </tr>
+        <tr>
+          <td><strong style="color:#B10A0A;font-size:16px;">②</strong></td>
+          <td><strong>トップページ 3カードセクション追加</strong><br><small style="color:#666">スライダー直下に「どれを選べばいいか迷ったら」カード3枚を設置</small></td>
+          <td>トップページ（スライダー直下）</td>
+          <td><span class="badge b-mid">中</span></td>
+          <td><span class="pri-red">★★★</span> 最優先</td>
+          <td>最大流入ページから早期にミドルファネルへ誘導。比較検討層を早期キャッチ</td>
+        </tr>
+        <tr>
+          <td><strong style="color:#B10A0A;font-size:16px;">③</strong></td>
+          <td><strong>商品ページ カートボタン下導線追加</strong><br><small style="color:#666">購入ボタン直下に「迷っていませんか？」選び方3リンク</small></td>
+          <td>商品ページ（購入ボタン直下）</td>
+          <td><span class="badge b-mid">中</span></td>
+          <td><span class="pri-red">★★★</span> 最優先</td>
+          <td>購入直前離脱を防止。選び方→再訪ルートの形成によりCVR向上</td>
+        </tr>
+        <tr>
+          <td><strong style="color:#B10A0A;font-size:16px;">④</strong></td>
+          <td><strong>選び方3ページ間 クロスリンク設置</strong><br><small style="color:#666">各ページ上下2箇所に他2ページへのリンクボタン</small></td>
+          <td>choice_flower / choice_shape / choice_method（各ページ上下）</td>
+          <td><span class="badge b-low">低</span></td>
+          <td><span class="pri-red">★★☆</span> 次優先</td>
+          <td>選び方ページ間の回遊促進。複数ページ閲覧で購入意欲・CVR向上</td>
+        </tr>
+        <tr>
+          <td><strong style="color:#B10A0A;font-size:16px;">⑤</strong></td>
+          <td><strong>/shopping/ サイドバー ウィジェット追加</strong><br><small style="color:#666">商品一覧サイドバー先頭に「選び方ガイド」ウィジェット</small></td>
+          <td>/shopping/ サイドバー先頭</td>
+          <td><span class="badge b-midlow">低〜中</span></td>
+          <td><span class="pri-red">★★☆</span> 次優先</td>
+          <td>商品一覧閲覧中の比較検討層へ常時接点。選び方→商品一覧→購入ルート強化</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<!-- ========================================
+     TAB 1: 施策① グローバルナビ
+     ======================================== -->
+<div class="tab-panel" data-panel="1">
+
+  <div class="sc">
+    <div class="sc-hd">
+      <h2>施策①　グローバルナビ「初めての方へ」に選び方3リンクを追加</h2>
+      <span class="badge b-low">実装：低</span>
+      <span class="badge b-pri">最優先 ★★★</span>
+    </div>
+    <div class="sc-grid">
+      <div class="sc-item">
+        <div class="sc-label">設置場所</div>
+        <div class="sc-val">「初めての方へ」ドロップダウンメニュー末尾</div>
+      </div>
+      <div class="sc-item">
+        <div class="sc-label">CTAコピー案</div>
+        <div class="sc-val">◆ 選び方ガイド<br>🌸 お花の種類から選ぶ ／ 💐 ブーケの形から選ぶ ／ 🏺 保存方法から選ぶ</div>
+      </div>
+      <div class="sc-item">
+        <div class="sc-label">実装方法</div>
+        <div class="sc-val">WP管理画面 ＞ 外観 ＞ メニューで「初めての方へ」グループ末尾に3リンク追加（親子設定のみ）</div>
+      </div>
+      <div class="sc-item">
+        <div class="sc-label">優先順位</div>
+        <div class="sc-val" style="color:#B10A0A;font-weight:bold;">★★★ 最優先（全ページ影響・低コスト）</div>
+      </div>
+      <div class="sc-item">
+        <div class="sc-label">期待効果（定性）</div>
+        <div class="sc-val">全流入ユーザーへの選び方ページ接点を提供。メニュー能動型クリックのためエンゲージメント高</div>
+      </div>
+      <div class="sc-item">
+        <div class="sc-label">期待効果（定量）</div>
+        <div class="sc-val">選び方ページ流入数の増加 → 遷移率19.4%×CVR1.2%への送客増</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wfc">
+    <div class="wfc-hd">
+      <span>🖥 ワイヤーフレーム｜「初めての方へ」ドロップダウン（展開状態） / 全ページ共通ヘッダー</span>
+      <span style="font-size:10.5px;opacity:0.7;">対象：xing-flower.com 全ページ</span>
+    </div>
+    <div class="wfc-body">
+      <div class="legend">
+        <div class="legend-item"><div class="leg-ex"></div> 既存コンテンツ</div>
+        <div class="legend-item"><div class="leg-new"></div> 【追加提案】新規追加</div>
+      </div>
+
+      <div class="browser">
+        <div class="browser-chrome">
+          <div class="dots"><div class="dot d-r"></div><div class="dot d-y"></div><div class="dot d-g"></div></div>
+          <div class="url-bar">https://www.xing-flower.com/</div>
+        </div>
+
+        <div class="sh">
+          <div class="sh-main">
+            <div class="sh-logo">Xing Flower<br><span style="font-size:9px;opacity:0.8;">シンフラワー</span></div>
+            <div class="sh-nav">
+              <div class="sh-nav-item">商品一覧</div>
+              <div class="sh-nav-item">制作事例</div>
+              <div class="sh-nav-item">お客様の声</div>
+              <div class="sh-nav-item">ブログ</div>
+              <div class="sh-nav-item sh-nav-active" style="font-size:11.5px;">初めての方へ <span style="font-size:9px;color:#B10A0A;">▲</span></div>
+            </div>
+            <div class="sh-right">
+              <div class="sh-icon">🛒</div>
+              <div class="sh-icon">📅</div>
+              <div class="sh-icon">✉</div>
+              <div class="sh-tel">年中無休<br>10:00～18:15</div>
+            </div>
+          </div>
+
+          <!-- DROPDOWN PANEL -->
+          <div class="dd-panel" style="margin:0 18px 12px;">
+            <!-- 既存リンク -->
+            <div style="margin-bottom:10px;">
+              <div class="dd-sec-title" style="color:#B10A0A;">初めての方へ</div>
+              <div class="dd-grid-4" style="margin-bottom:5px;">
+                <div class="dd-link"><span class="dd-arr">▶</span>ご注文の前にお読みください</div>
+                <div class="dd-link"><span class="dd-arr">▶</span>お支払い方法について</div>
+                <div class="dd-link"><span class="dd-arr">▶</span>料金プラン・納期について</div>
+                <div class="dd-link"><span class="dd-arr">▶</span>お急ぎのお客様へ</div>
+              </div>
+              <div class="dd-grid-3">
+                <div class="dd-link"><span class="dd-arr">▶</span>お手元のブーケの送付方法</div>
+                <div class="dd-link"><span class="dd-arr">▶</span>よくあるご質問</div>
+                <div class="dd-link"><span class="dd-arr">▶</span>保証・作品のお取り扱い注意</div>
+              </div>
+            </div>
+
+            <!-- ★ 追加提案 -->
+            <div class="wf-new" style="padding:11px 14px;margin-top:6px;">
+              <div class="wf-new-badge">【追加提案】選び方ガイドセクション（ドロップダウン末尾）</div>
+              <div style="font-size:12px;font-weight:bold;color:#6a9955;margin-bottom:8px;padding-bottom:6px;border-bottom:1px dashed #a8d8a8;">◆ 選び方ガイド</div>
+              <div class="dd-grid-3">
+                <div class="dd-link" style="border-color:#c1a278;background:#fffaf5;font-weight:bold;">
+                  <span style="font-size:15px;">🌸</span> お花の種類から選ぶ
+                </div>
+                <div class="dd-link" style="border-color:#c1a278;background:#fffaf5;font-weight:bold;">
+                  <span style="font-size:15px;">💐</span> ブーケの形から選ぶ
+                </div>
+                <div class="dd-link" style="border-color:#c1a278;background:#fffaf5;font-weight:bold;">
+                  <span style="font-size:15px;">🏺</span> 保存方法から選ぶ
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sh-bottom">
+            <div class="sh-bl">押し花アートの魅力特集</div>
+            <div class="sh-bl">押し花アート 本数別おすすめ</div>
+            <div class="sh-bl">108本のバラ保存特集</div>
+            <div class="sh-bl">ご注文の流れ（当日対応OK）</div>
+          </div>
+        </div>
+
+        <div class="p-gray" style="height:80px;">ページコンテンツ（ヘッダー変更のため省略）</div>
+      </div>
+
+      <div class="ann">
+        <p><strong>📌 実装ポイント：</strong>WordPress管理画面 &gt; 外観 &gt; メニューにて、「初めての方へ」グループの末尾に choice_flower・choice_shape・choice_method の3ページをメニュー項目として追加。親子関係の設定のみで完結し、コード変更不要。セクション見出し「◆ 選び方ガイド」の表示はCSSの<code>:first-child</code>擬似クラスまたは追加のHTMLブロックで対応。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="impl-box">
+    <div class="impl-hd">💻 実装コードスニペット（追加部分のみ）</div>
+    <div class="impl-body">
+      <div class="impl-grid">
+        <div class="impl-item">
+          <h4>追加場所</h4>
+          <p>sub-menu-table の &lt;table&gt; 内、既存 &lt;tr&gt; の末尾に追加</p>
+          <h4 style="margin-top:12px;">スタイル調整（style.css or カスタムCSS）</h4>
+          <p>.choice-guide-section { border-top: 1px solid #eee; padding-top: 10px; }</p>
+        </div>
+        <div class="impl-item">
+          <h4>追加HTMLイメージ</h4>
+        </div>
+      </div>
+      <div class="code-block">
+<span class="c">&lt;!-- ◆ 選び方ガイド（ドロップダウン末尾に追加） --&gt;</span>
+<span class="t">&lt;tr</span> <span class="a">class</span>=<span class="v">"choice-guide-section"</span><span class="t">&gt;</span>
+  <span class="t">&lt;td</span> <span class="a">colspan</span>=<span class="v">"8"</span> <span class="a">style</span>=<span class="v">"padding-top:12px;border-top:1px solid #eee;"</span><span class="t">&gt;</span>
+    <span class="t">&lt;div</span> <span class="a">style</span>=<span class="v">"color:#8c0f0f;font-weight:bold;margin-bottom:6px;"</span><span class="t">&gt;</span>◆ 選び方ガイド<span class="t">&lt;/div&gt;</span>
+    <span class="t">&lt;div</span> <span class="a">style</span>=<span class="v">"display:flex;gap:12px;"</span><span class="t">&gt;</span>
+      <span class="t">&lt;a</span> <span class="a">href</span>=<span class="v">"/choice_flower"</span><span class="t">&gt;</span>🌸 お花の種類から選ぶ<span class="t">&lt;/a&gt;</span>
+      <span class="t">&lt;a</span> <span class="a">href</span>=<span class="v">"/choice_shape"</span><span class="t">&gt;</span>💐 ブーケの形から選ぶ<span class="t">&lt;/a&gt;</span>
+      <span class="t">&lt;a</span> <span class="a">href</span>=<span class="v">"/choice_method"</span><span class="t">&gt;</span>🏺 保存方法から選ぶ<span class="t">&lt;/a&gt;</span>
+    <span class="t">&lt;/div&gt;</span>
+  <span class="t">&lt;/td&gt;</span>
+<span class="t">&lt;/tr&gt;</span></div>
+    </div>
+  </div>
+</div><!-- /TAB 1 -->
+
+
+<!-- ========================================
+     TAB 2: 施策② トップページ
+     ======================================== -->
+<div class="tab-panel" data-panel="2">
+
+  <div class="sc">
+    <div class="sc-hd">
+      <h2>施策②　トップページに「選び方ガイド」3カードセクションを追加</h2>
+      <span class="badge b-mid">実装：中</span>
+      <span class="badge b-pri">最優先 ★★★</span>
+    </div>
+    <div class="sc-grid">
+      <div class="sc-item">
+        <div class="sc-label">設置場所</div>
+        <div class="sc-val">トップページ スライダー直下（ランキングセクションより前）</div>
+      </div>
+      <div class="sc-item">
+        <div class="sc-label">見出しコピー</div>
+        <div class="sc-val">「どれを選べばいいか迷ったら」<br><small>あなたのブーケに合う一品を、3つの選び方から探せます</small></div>
+      </div>
+      <div class="sc-item">
+        <div class="sc-label">実装方法</div>
+        <div class="sc-val">固定ページエディタ（Gutenberg or カスタムHTML）にブロック追加。カードレイアウトはCSS調整が必要</div>
+      </div>
+      <div class="sc-item">
+        <div class="sc-label">カード①</div>
+        <div class="sc-val">🌸 お花の種類から選ぶ<br>バラ・かすみ草・カラーなど、花ごとの特徴とおすすめ作品をチェック</div>
+      </div>
+      <div class="sc-item">
+        <div class="sc-label">カード②</div>
+        <div class="sc-val">💐 ブーケの形から選ぶ<br>ラウンド・クラッチ・キャスケード…形ごとのデザイン例を見る</div>
+      </div>
+      <div class="sc-item">
+        <div class="sc-label">カード③</div>
+        <div class="sc-val">🏺 保存方法から選ぶ<br>ボトル・額・押し花…仕上がりイメージで自分らしい一品を</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wfc">
+    <div class="wfc-hd">
+      <span>🖥 ワイヤーフレーム｜トップページ（スライダー直下〜ランキングセクション）</span>
+      <span style="font-size:10.5px;opacity:0.7;">対象：https://www.xing-flower.com/</span>
+    </div>
+    <div class="wfc-body">
+      <div class="legend">
+        <div class="legend-item"><div class="leg-ex"></div> 既存コンテンツ</div>
+        <div class="legend-item"><div class="leg-new"></div> 【追加提案】新規追加</div>
+      </div>
+
+      <div class="browser">
+        <div class="browser-chrome">
+          <div class="dots"><div class="dot d-r"></div><div class="dot d-y"></div><div class="dot d-g"></div></div>
+          <div class="url-bar">https://www.xing-flower.com/</div>
+        </div>
+
+        <!-- Site Header -->
+        <div class="sh">
+          <div class="sh-main">
+            <div class="sh-logo">Xing Flower<br><span style="font-size:9px;opacity:0.8;">シンフラワー</span></div>
+            <div class="sh-nav">
+              <div class="sh-nav-item">商品一覧</div>
+              <div class="sh-nav-item">制作事例</div>
+              <div class="sh-nav-item">お客様の声</div>
+              <div class="sh-nav-item">ブログ</div>
+              <div class="sh-nav-item">初めての方へ <span style="font-size:9px;">▼</span></div>
+            </div>
+            <div class="sh-right">
+              <div class="sh-icon">🛒</div>
+              <div class="sh-icon">📅</div>
+              <div class="sh-icon">✉</div>
+              <div class="sh-tel">年中無休<br>10:00～18:15</div>
+            </div>
+          </div>
+          <div class="sh-bottom">
+            <div class="sh-bl">押し花アートの魅力特集</div>
+            <div class="sh-bl">押し花アート 本数別おすすめ</div>
+            <div class="sh-bl">108本のバラ保存特集</div>
+            <div class="sh-bl">ご注文の流れ（当日対応OK）</div>
+          </div>
+        </div>
+
+        <!-- Existing: Slider -->
+        <div class="p-slider">🖼 メインスライダー（既存）</div>
+
+        <!-- ★ 追加提案: 3カードセクション -->
+        <div class="wf-new" style="margin:12px 18px;padding:18px 14px;">
+          <div class="wf-new-badge">【追加提案】選び方ガイド 3カードセクション（スライダー直下）</div>
+          <div class="sec-wrap" style="padding:0;">
+            <div class="sec-heading">どれを選べばいいか迷ったら</div>
+            <div class="sec-sub">あなたのブーケに合う一品を、3つの選び方から探せます</div>
+            <div class="cards-grid">
+              <div class="card">
+                <div class="card-emoji">🌸</div>
+                <div class="card-body">
+                  <div class="card-title">お花の種類から選ぶ</div>
+                  <div class="card-desc">バラ・かすみ草・カラーなど、花ごとの特徴とおすすめ作品をチェック</div>
+                  <div class="card-cta">詳しく見る →</div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-emoji">💐</div>
+                <div class="card-body">
+                  <div class="card-title">ブーケの形から選ぶ</div>
+                  <div class="card-desc">ラウンド・クラッチ・キャスケード…形ごとのデザイン例を見る</div>
+                  <div class="card-cta">詳しく見る →</div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-emoji">🏺</div>
+                <div class="card-body">
+                  <div class="card-title">保存方法から選ぶ</div>
+                  <div class="card-desc">ボトル・額・押し花…仕上がりイメージで自分らしい一品を</div>
+                  <div class="card-cta">詳しく見る →</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Existing: Ranking Section -->
+        <div style="padding:12px 18px 6px;">
+          <div style="font-size:14px;font-weight:bold;color:#293742;margin-bottom:8px;">🏆 人気ランキング（既存）</div>
+          <div class="rank-grid" style="padding:0;">
+            <div class="rank-item"><div class="rank-img"></div><div class="rank-txt">Mezzo（M）¥74,800</div></div>
+            <div class="rank-item"><div class="rank-img"></div><div class="rank-txt">Grande（L）¥98,000</div></div>
+            <div class="rank-item"><div class="rank-img"></div><div class="rank-txt">Petite（S）¥54,800</div></div>
+            <div class="rank-item"><div class="rank-img"></div><div class="rank-txt">Bottle ¥44,800</div></div>
+          </div>
+        </div>
+
+        <div class="p-gray" style="height:50px;">以下、既存セクション続く…</div>
+      </div>
+
+      <div class="ann">
+        <p><strong>📌 実装ポイント：</strong>固定ページエディタのスライダーブロック直後にカスタムHTMLブロックとして追加。3カラムのCSSグリッドレイアウト。各カードのCTAボタンは choice_flower / choice_shape / choice_method へリンク。背景色・ボーダー等はサイトデザインに合わせてCSS調整が必要。Gutenberg環境ならカラムブロックで代替も可能。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="impl-box">
+    <div class="impl-hd">💻 実装コードスニペット（カードセクションHTML）</div>
+    <div class="impl-body">
+      <div class="code-block">
+<span class="c">&lt;!-- 選び方ガイド 3カードセクション（スライダー直下に追加） --&gt;</span>
+<span class="t">&lt;section</span> <span class="a">class</span>=<span class="v">"choice-guide-section"</span> <span class="a">style</span>=<span class="v">"padding:30px 20px;background:#fff;"</span><span class="t">&gt;</span>
+  <span class="t">&lt;h2</span> <span class="a">style</span>=<span class="v">"text-align:center;font-size:20px;color:#293742;margin-bottom:6px;"</span><span class="t">&gt;</span>どれを選べばいいか迷ったら<span class="t">&lt;/h2&gt;</span>
+  <span class="t">&lt;p</span> <span class="a">style</span>=<span class="v">"text-align:center;font-size:13px;color:#666;margin-bottom:24px;"</span><span class="t">&gt;</span>あなたのブーケに合う一品を、3つの選び方から探せます<span class="t">&lt;/p&gt;</span>
+  <span class="t">&lt;div</span> <span class="a">style</span>=<span class="v">"display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:900px;margin:0 auto;"</span><span class="t">&gt;</span>
+    <span class="c">&lt;!-- カード①--&gt;</span>
+    <span class="t">&lt;div</span> <span class="a">style</span>=<span class="v">"border:1px solid #ddd;border-radius:8px;overflow:hidden;"</span><span class="t">&gt;</span>
+      <span class="t">&lt;div</span> <span class="a">style</span>=<span class="v">"font-size:36px;text-align:center;padding:16px;background:#fdf8f2;"</span><span class="t">&gt;</span>🌸<span class="t">&lt;/div&gt;</span>
+      <span class="t">&lt;div</span> <span class="a">style</span>=<span class="v">"padding:14px;"</span><span class="t">&gt;</span>
+        <span class="t">&lt;h3&gt;</span>お花の種類から選ぶ<span class="t">&lt;/h3&gt;</span>
+        <span class="t">&lt;p&gt;</span>バラ・かすみ草・カラーなど、花ごとの特徴とおすすめ作品をチェック<span class="t">&lt;/p&gt;</span>
+        <span class="t">&lt;a</span> <span class="a">href</span>=<span class="v">"/choice_flower"</span><span class="t">&gt;</span>詳しく見る →<span class="t">&lt;/a&gt;</span>
+      <span class="t">&lt;/div&gt;</span>
+    <span class="t">&lt;/div&gt;</span>
+    <span class="c">&lt;!-- カード②③も同様 --&gt;</span>
+  <span class="t">&lt;/div&gt;</span>
+<span class="t">&lt;/section&gt;</span></div>
+    </div>
+  </div>
+</div><!-- /TAB 2 -->
+
+
+<!-- ========================================
+     TAB 3: 施策③ 商品ページ
+     ======================================== -->
+<div class="tab-panel" data-panel="3">
+
+  <div class="sc">
+    <div class="sc-hd">
+      <h2>施策③　商品ページのカートボタン下に選び方導線を追加</h2>
+      <span class="badge b-mid">実装：中</span>
+      <span class="badge b-pri">最優先 ★★★</span>
+    </div>
+    <div class="sc-grid">
+      <div class="sc-item">
+        <div class="sc-label">設置場所</div>
+        <div class="sc-val">商品ページの購入ボタン（カートに入れる）直下</div>
+      </div>
+      <div class="sc-item">
+        <div class="sc-label">見出しコピー</div>
+        <div class="sc-val">「どれを選べばいいか迷っていませんか？」<br>選び方ガイドで確認してから選べます</div>
+      </div>
+      <div class="sc-item">
+        <div class="sc-label">実装方法</div>
+        <div class="sc-val">WooCommerce単一商品テンプレート（single-product.php）の購入ボタン直後にHTMLブロック追加。子テーマ推奨</div>
+      </div>
+      <div class="sc-item">
+        <div class="sc-label">ターゲット</div>
+        <div class="sc-val">商品ページまで到達したが購入に迷っているユーザー（購入直前の比較検討層）</div>
+      </div>
+      <div class="sc-item">
+        <div class="sc-label">期待効果（定性）</div>
+        <div class="sc-val">購入直前の離脱防止。選び方ページで納得→再訪→購入のルート形成</div>
+      </div>
+      <div class="sc-item">
+        <div class="sc-label">期待効果（定量）</div>
+        <div class="sc-val">商品ページ→離脱率の低下。選び方ページ経由CVR（1.2%）への誘導増</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wfc">
+    <div class="wfc-hd">
+      <span>🖥 ワイヤーフレーム｜商品ページ（カートボタン周辺）</span>
+      <span style="font-size:10.5px;opacity:0.7;">対象：https://www.xing-flower.com/shopping/mezzo など全商品ページ</span>
+    </div>
+    <div class="wfc-body">
+      <div class="legend">
+        <div class="legend-item"><div class="leg-ex"></div> 既存コンテンツ</div>
+        <div class="legend-item"><div class="leg-new"></div> 【追加提案】新規追加</div>
+      </div>
+
+      <div class="browser">
+        <div class="browser-chrome">
+          <div class="dots"><div class="dot d-r"></div><div class="dot d-y"></div><div class="dot d-g"></div></div>
+          <div class="url-bar">https://www.xing-flower.com/shopping/mezzo</div>
+        </div>
+
+        <div class="sh">
+          <div class="sh-main">
+            <div class="sh-logo">Xing Flower<br><span style="font-size:9px;opacity:0.8;">シンフラワー</span></div>
+            <div class="sh-nav">
+              <div class="sh-nav-item" style="color:#B10A0A;font-weight:bold;">商品一覧</div>
+              <div class="sh-nav-item">制作事例</div>
+              <div class="sh-nav-item">お客様の声</div>
+              <div class="sh-nav-item">ブログ</div>
+              <div class="sh-nav-item">初めての方へ <span style="font-size:9px;">▼</span></div>
+            </div>
+            <div class="sh-right">
+              <div class="sh-icon">🛒</div><div class="sh-icon">📅</div><div class="sh-icon">✉</div>
+              <div class="sh-tel">年中無休<br>10:00～18:15</div>
+            </div>
+          </div>
+          <div class="sh-bottom">
+            <div class="sh-bl">押し花アートの魅力特集</div>
+            <div class="sh-bl">押し花アート 本数別おすすめ</div>
+            <div class="sh-bl">108本のバラ保存特集</div>
+            <div class="sh-bl">ご注文の流れ（当日対応OK）</div>
+          </div>
+        </div>
+
+        <!-- Product Detail -->
+        <div class="prod-2col">
+          <!-- Left: Product Image -->
+          <div>
+            <div class="prod-img">🌸 商品画像スライダー（既存）</div>
+            <div style="display:flex;gap:5px;margin-top:6px;">
+              <div style="width:50px;height:40px;background:#e8dfd0;border-radius:3px;"></div>
+              <div style="width:50px;height:40px;background:#e0d8c8;border-radius:3px;"></div>
+              <div style="width:50px;height:40px;background:#d8d0b8;border-radius:3px;"></div>
+            </div>
+          </div>
+
+          <!-- Right: Product Info -->
+          <div>
+            <div class="prod-title">Mezzo（M）［メゾ（M）］</div>
+            <div class="prod-price">販売価格（税込）：¥74,800-</div>
+            <div class="prod-stars">★★★★★ 4.9（125件）</div>
+            <div class="prod-desc">人気１位！ 花束風や敷き詰めなど様々なデザインが可能。<br>花束風12本(ダズンローズ)が人気のデザイン。</div>
+
+            <!-- 既存: 購入ボタン -->
+            <div style="margin-bottom:8px;">
+              <div style="font-size:11px;color:#555;margin-bottom:5px;">サイズ・オプション選択（既存）</div>
+              <div style="background:#f5f5f5;border:1px solid #ddd;padding:8px;border-radius:4px;font-size:11px;color:#666;margin-bottom:8px;">▼ オプションを選択</div>
+            </div>
+            <div class="prod-order-btn">🛒 カートに入れる（既存）</div>
+            <div class="prod-consult-btn">サロンへの来店・相談はこちら（既存）</div>
+
+            <!-- ★ 追加提案 -->
+            <div class="wf-new" style="padding:12px 14px;margin-top:6px;">
+              <div class="wf-new-badge">【追加提案】選び方導線（カートボタン直下）</div>
+              <div style="font-size:12.5px;font-weight:bold;color:#293742;margin-bottom:5px;">🤔 どれを選べばいいか迷っていませんか？</div>
+              <div style="font-size:11px;color:#555;margin-bottom:10px;">選び方ガイドで、あなたのブーケに合った保存方法・デザインを確認してから選べます。</div>
+              <div style="display:flex;flex-direction:column;gap:6px;">
+                <a style="display:flex;align-items:center;gap:6px;padding:7px 10px;border:1px solid #c1a278;border-radius:4px;font-size:11.5px;color:#293742;background:white;text-decoration:none;">
+                  <span>🌸</span> お花の種類から選ぶ <span style="margin-left:auto;color:#B10A0A;">→</span>
+                </a>
+                <a style="display:flex;align-items:center;gap:6px;padding:7px 10px;border:1px solid #c1a278;border-radius:4px;font-size:11.5px;color:#293742;background:white;text-decoration:none;">
+                  <span>💐</span> ブーケの形から選ぶ <span style="margin-left:auto;color:#B10A0A;">→</span>
+                </a>
+                <a style="display:flex;align-items:center;gap:6px;padding:7px 10px;border:1px solid #c1a278;border-radius:4px;font-size:11.5px;color:#293742;background:white;text-decoration:none;">
+                  <span>🏺</span> 保存方法から選ぶ <span style="margin-left:auto;color:#B10A0A;">→</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-gray" style="height:50px;">以下、商品詳細・レビューセクション続く…</div>
+      </div>
+
+      <div class="ann">
+        <p><strong>📌 実装ポイント：</strong>WooCommerce単一商品テンプレート（<code>single-product.php</code> または <code>content-single-product.php</code>）の購入ボタン出力フックの直後にHTMLを追加。子テーマで実装推奨。購入ボタンより上（価格・オプション選択より前）には配置しないこと（購入フローを阻害しないため）。スクロール深部のレビューセクション前ではなく、カートボタン直下（浅い位置）に設置することで接触率を高める。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="impl-box">
+    <div class="impl-hd">💻 実装コードスニペット（商品ページ追加HTML）</div>
+    <div class="impl-body">
+      <div class="code-block">
+<span class="c">&lt;!-- 選び方導線（カートボタン直下に追加） --&gt;</span>
+<span class="t">&lt;div</span> <span class="a">class</span>=<span class="v">"choice-guide-box"</span> <span class="a">style</span>=<span class="v">"border:1px solid #e0d0b8;border-radius:6px;padding:14px 16px;margin-top:12px;background:#fdf8f2;"</span><span class="t">&gt;</span>
+  <span class="t">&lt;p</span> <span class="a">style</span>=<span class="v">"font-weight:bold;color:#293742;margin-bottom:6px;"</span><span class="t">&gt;</span>🤔 どれを選べばいいか迷っていませんか？<span class="t">&lt;/p&gt;</span>
+  <span class="t">&lt;p</span> <span class="a">style</span>=<span class="v">"font-size:12px;color:#555;margin-bottom:10px;"</span><span class="t">&gt;</span>選び方ガイドで、あなたのブーケに合った保存方法・デザインを確認してから選べます。<span class="t">&lt;/p&gt;</span>
+  <span class="t">&lt;div</span> <span class="a">style</span>=<span class="v">"display:flex;flex-direction:column;gap:6px;"</span><span class="t">&gt;</span>
+    <span class="t">&lt;a</span> <span class="a">href</span>=<span class="v">"/choice_flower"</span><span class="t">&gt;</span>🌸 お花の種類から選ぶ →<span class="t">&lt;/a&gt;</span>
+    <span class="t">&lt;a</span> <span class="a">href</span>=<span class="v">"/choice_shape"</span><span class="t">&gt;</span>💐 ブーケの形から選ぶ →<span class="t">&lt;/a&gt;</span>
+    <span class="t">&lt;a</span> <span class="a">href</span>=<span class="v">"/choice_method"</span><span class="t">&gt;</span>🏺 保存方法から選ぶ →<span class="t">&lt;/a&gt;</span>
+  <span class="t">&lt;/div&gt;</span>
+<span class="t">&lt;/div&gt;</span></div>
+    </div>
+  </div>
+</div><!-- /TAB 3 -->
+
+
+<!-- ========================================
+     TAB 4: 施策④ クロスリンク
+     ======================================== -->
+<div class="tab-panel" data-panel="4">
+
+  <div class="sc">
+    <div class="sc-hd">
+      <h2>施策④　選び方3ページ間のクロスリンクを設置</h2>
+      <span class="badge b-low">実装：低</span>
+      <span class="badge" style="background:#475f72;color:white;">次優先 ★★☆</span>
+    </div>
+    <div class="sc-grid">
+      <div class="sc-item">
+        <div class="sc-label">設置場所</div>
+        <div class="sc-val">choice_flower / choice_shape / choice_method<br>各ページ上部・下部（2箇所ずつ）</div>
+      </div>
+      <div class="sc-item">
+        <div class="sc-label">クロスリンクコピー</div>
+        <div class="sc-val">ラベル：「他の選び方で探す：」<br>閲覧中以外の2ページへのリンクボタン</div>
+      </div>
+      <div class="sc-item">
+        <div class="sc-label">実装方法</div>
+        <div class="sc-val">各固定ページエディタの先頭・末尾にHTMLブロックとして追加（3ページ分作業）</div>
+      </div>
+      <div class="sc-item">
+        <div class="sc-label">表示例（choice_flower閲覧時）</div>
+        <div class="sc-val">他の選び方で探す：<br>💐 ブーケの形から選ぶ → ｜ 🏺 保存方法から選ぶ →</div>
+      </div>
+      <div class="sc-item">
+        <div class="sc-label">期待効果（定性）</div>
+        <div class="sc-val">選び方ページ間の回遊を促進。複数の切り口でブーケ保存を検討することで購入意欲醸成</div>
+      </div>
+      <div class="sc-item">
+        <div class="sc-label">期待効果（定量）</div>
+        <div class="sc-val">選び方ページ内回遊率の向上。CVR1.2%の選び方経由ユーザーを3ページ分で効率的に増やす</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wfc">
+    <div class="wfc-hd">
+      <span>🖥 ワイヤーフレーム｜選び方ページ（choice_flower）クロスリンク設置箇所</span>
+      <span style="font-size:10.5px;opacity:0.7;">3ページ共通パターン（現在閲覧中以外の2ページへリンク）</span>
+    </div>
+    <div class="wfc-body">
+      <div class="legend">
+        <div class="legend-item"><div class="leg-ex"></div> 既存コンテンツ</div>
+        <div class="legend-item"><div class="leg-new"></div> 【追加提案】新規追加（上部・下部 2箇所）</div>
+      </div>
+
+      <div class="browser">
+        <div class="browser-chrome">
+          <div class="dots"><div class="dot d-r"></div><div class="dot d-y"></div><div class="dot d-g"></div></div>
+          <div class="url-bar">https://www.xing-flower.com/choice_flower</div>
+        </div>
+
+        <div class="sh">
+          <div class="sh-main">
+            <div class="sh-logo">Xing Flower<br><span style="font-size:9px;opacity:0.8;">シンフラワー</span></div>
+            <div class="sh-nav">
+              <div class="sh-nav-item">商品一覧</div>
+              <div class="sh-nav-item">制作事例</div>
+              <div class="sh-nav-item">お客様の声</div>
+              <div class="sh-nav-item">ブログ</div>
+              <div class="sh-nav-item">初めての方へ <span style="font-size:9px;">▼</span></div>
+            </div>
+            <div class="sh-right">
+              <div class="sh-icon">🛒</div><div class="sh-icon">📅</div><div class="sh-icon">✉</div>
+              <div class="sh-tel">年中無休<br>10:00～18:15</div>
+            </div>
+          </div>
+          <div class="sh-bottom">
+            <div class="sh-bl">押し花アートの魅力特集</div>
+            <div class="sh-bl">押し花アート 本数別おすすめ</div>
+            <div class="sh-bl">108本のバラ保存特集</div>
+            <div class="sh-bl">ご注文の流れ（当日対応OK）</div>
+          </div>
+        </div>
+
+        <div class="choice-content">
+          <!-- ★ 上部クロスリンク（追加） -->
+          <div class="wf-new" style="margin-bottom:16px;padding:10px 12px;">
+            <div class="wf-new-badge">【追加提案】クロスリンクバー（ページ上部）</div>
+            <div class="cl-bar" style="border:none;background:transparent;padding:0;">
+              <div class="cl-label">他の選び方で探す：</div>
+              <div class="cl-btn"><span>💐</span> ブーケの形から選ぶ <span class="cl-arr">→</span></div>
+              <div class="cl-btn"><span>🏺</span> 保存方法から選ぶ <span class="cl-arr">→</span></div>
+            </div>
+          </div>
+
+          <!-- 既存: ページコンテンツ -->
+          <div class="choice-title">🌸 お花の種類から選ぶ（既存ページコンテンツ）</div>
+          <div class="choice-intro">バラ・かすみ草・カラー・ひまわりなど、ブーケに使われるお花の種類ごとに、おすすめの保存加工作品をご紹介します。</div>
+          <div class="flower-grid">
+            <div class="flower-item"><div class="flower-img"></div><div class="flower-name">バラ</div></div>
+            <div class="flower-item"><div class="flower-img" style="background:linear-gradient(#e8f4e8,#d0e8d0);"></div><div class="flower-name">かすみ草</div></div>
+            <div class="flower-item"><div class="flower-img" style="background:linear-gradient(#ffe4f0,#ffcce0);"></div><div class="flower-name">カラー</div></div>
+            <div class="flower-item"><div class="flower-img" style="background:linear-gradient(#fffde4,#fff8c0);"></div><div class="flower-name">ひまわり</div></div>
+            <div class="flower-item"><div class="flower-img" style="background:linear-gradient(#f0e4ff,#e0ccff);"></div><div class="flower-name">トルコキキョウ</div></div>
+          </div>
+
+          <div class="p-gray-tall" style="height:80px;border-radius:4px;margin-bottom:14px;">ページコンテンツ続く（各花の紹介・作品事例）…</div>
+
+          <!-- ★ 下部クロスリンク（追加） -->
+          <div class="wf-new" style="padding:10px 12px;">
+            <div class="wf-new-badge">【追加提案】クロスリンクバー（ページ下部）</div>
+            <div class="cl-bar" style="border:none;background:transparent;padding:0;">
+              <div class="cl-label">他の選び方で探す：</div>
+              <div class="cl-btn"><span>💐</span> ブーケの形から選ぶ <span class="cl-arr">→</span></div>
+              <div class="cl-btn"><span>🏺</span> 保存方法から選ぶ <span class="cl-arr">→</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-gray" style="height:50px;">以下、フッター</div>
+      </div>
+
+      <div class="ann">
+        <p><strong>📌 実装ポイント：</strong>3ページ（choice_flower / choice_shape / choice_method）それぞれの固定ページエディタで、コンテンツの先頭と末尾にHTMLブロックを追加。各ページで「閲覧中のページ以外の2ページ」へのリンクを動的に出力するか、固定ページなので直接HTMLに記述しても可。下部のクロスリンクは商品一覧や購入CTAと連携させるとより効果的。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="impl-box">
+    <div class="impl-hd">💻 実装コードスニペット（choice_flower ページ上部・下部共通パターン）</div>
+    <div class="impl-body">
+      <div class="code-block">
+<span class="c">&lt;!-- クロスリンクバー（choice_flower の上部・下部に追加） --&gt;</span>
+<span class="t">&lt;div</span> <span class="a">class</span>=<span class="v">"choice-crosslink"</span> <span class="a">style</span>=<span class="v">"background:#fdf8f2;border:1px solid #e8e0d0;border-radius:6px;padding:12px 16px;display:flex;align-items:center;gap:12px;margin:16px 0;"</span><span class="t">&gt;</span>
+  <span class="t">&lt;span</span> <span class="a">style</span>=<span class="v">"font-size:12px;color:#666;white-space:nowrap;"</span><span class="t">&gt;</span>他の選び方で探す：<span class="t">&lt;/span&gt;</span>
+  <span class="t">&lt;a</span> <span class="a">href</span>=<span class="v">"/choice_shape"</span> <span class="a">style</span>=<span class="v">"padding:7px 16px;border:1px solid #c1a278;border-radius:20px;font-size:12px;color:#293742;"</span><span class="t">&gt;</span>
+    💐 ブーケの形から選ぶ →
+  <span class="t">&lt;/a&gt;</span>
+  <span class="t">&lt;a</span> <span class="a">href</span>=<span class="v">"/choice_method"</span> <span class="a">style</span>=<span class="v">"padding:7px 16px;border:1px solid #c1a278;border-radius:20px;font-size:12px;color:#293742;"</span><span class="t">&gt;</span>
+    🏺 保存方法から選ぶ →
+  <span class="t">&lt;/a&gt;</span>
+<span class="t">&lt;/div&gt;</span>
+<span class="c">&lt;!-- choice_shape / choice_method も同様（リンク先2ページを変更） --&gt;</span></div>
+    </div>
+  </div>
+</div><!-- /TAB 4 -->
+
+
+<!-- ========================================
+     TAB 5: 施策⑤ サイドバー
+     ======================================== -->
+<div class="tab-panel" data-panel="5">
+
+  <div class="sc">
+    <div class="sc-hd">
+      <h2>施策⑤　/shopping/ サイドバーに「選び方ガイド」ウィジェットを追加</h2>
+      <span class="badge b-midlow">実装：低〜中</span>
+      <span class="badge" style="background:#475f72;color:white;">次優先 ★★☆</span>
+    </div>
+    <div class="sc-grid">
+      <div class="sc-item">
+        <div class="sc-label">設置場所</div>
+        <div class="sc-val">/shopping/（商品一覧ページ）のサイドバー先頭</div>
+      </div>
+      <div class="sc-item">
+        <div class="sc-label">ウィジェットコピー</div>
+        <div class="sc-val">ヘッダー：「どれを選べばいいか迷ったら」<br>🌸 お花の種類から選ぶ → ｜ 💐 ブーケの形から選ぶ → ｜ 🏺 保存方法から選ぶ →</div>
+      </div>
+      <div class="sc-item">
+        <div class="sc-label">実装方法</div>
+        <div class="sc-val">WP管理画面 ＞ 外観 ＞ ウィジェットにてカスタムHTMLウィジェットを追加、または子テーマのsidebar.phpを直接編集</div>
+      </div>
+      <div class="sc-item">
+        <div class="sc-label">ターゲット</div>
+        <div class="sc-val">商品一覧を閲覧している比較検討層（購入前にどれにするか迷っているユーザー）</div>
+      </div>
+      <div class="sc-item">
+        <div class="sc-label">期待効果（定性）</div>
+        <div class="sc-val">商品一覧閲覧中に常時サイドバーから選び方ページへ誘導。自然な比較検討フローを促進</div>
+      </div>
+      <div class="sc-item">
+        <div class="sc-label">期待効果（定量）</div>
+        <div class="sc-val">商品一覧→選び方ページへの新規流入ルートが生まれ、CVR1.2%への送客が可能に</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wfc">
+    <div class="wfc-hd">
+      <span>🖥 ワイヤーフレーム｜商品一覧ページ（/shopping/）サイドバー</span>
+      <span style="font-size:10.5px;opacity:0.7;">対象：https://www.xing-flower.com/shopping/</span>
+    </div>
+    <div class="wfc-body">
+      <div class="legend">
+        <div class="legend-item"><div class="leg-ex"></div> 既存コンテンツ</div>
+        <div class="legend-item"><div class="leg-new"></div> 【追加提案】新規追加</div>
+      </div>
+
+      <div class="browser">
+        <div class="browser-chrome">
+          <div class="dots"><div class="dot d-r"></div><div class="dot d-y"></div><div class="dot d-g"></div></div>
+          <div class="url-bar">https://www.xing-flower.com/shopping/</div>
+        </div>
+
+        <div class="sh">
+          <div class="sh-main">
+            <div class="sh-logo">Xing Flower<br><span style="font-size:9px;opacity:0.8;">シンフラワー</span></div>
+            <div class="sh-nav">
+              <div class="sh-nav-item" style="color:#B10A0A;font-weight:bold;">商品一覧</div>
+              <div class="sh-nav-item">制作事例</div>
+              <div class="sh-nav-item">お客様の声</div>
+              <div class="sh-nav-item">ブログ</div>
+              <div class="sh-nav-item">初めての方へ <span style="font-size:9px;">▼</span></div>
+            </div>
+            <div class="sh-right">
+              <div class="sh-icon">🛒</div><div class="sh-icon">📅</div><div class="sh-icon">✉</div>
+              <div class="sh-tel">年中無休<br>10:00～18:15</div>
+            </div>
+          </div>
+          <div class="sh-bottom">
+            <div class="sh-bl">押し花アートの魅力特集</div>
+            <div class="sh-bl">押し花アート 本数別おすすめ</div>
+            <div class="sh-bl">108本のバラ保存特集</div>
+            <div class="sh-bl">ご注文の流れ（当日対応OK）</div>
+          </div>
+        </div>
+
+        <!-- カテゴリナビ（既存） -->
+        <div style="padding:10px 16px;background:#f5f5f5;border-bottom:1px solid #eee;">
+          <div style="display:flex;gap:6px;flex-wrap:wrap;">
+            <div style="padding:5px 10px;background:white;border:1px solid #ddd;border-radius:4px;font-size:11px;color:#333;">花束</div>
+            <div style="padding:5px 10px;background:white;border:1px solid #ddd;border-radius:4px;font-size:11px;color:#333;">クラッチブーケ</div>
+            <div style="padding:5px 10px;background:white;border:1px solid #ddd;border-radius:4px;font-size:11px;color:#333;">ラウンドブーケ</div>
+            <div style="padding:5px 10px;background:white;border:1px solid #ddd;border-radius:4px;font-size:11px;color:#333;">キャスケード</div>
+            <div style="padding:5px 10px;background:white;border:1px solid #ddd;border-radius:4px;font-size:11px;color:#333;">ボールブーケ</div>
+            <div style="padding:5px 10px;background:white;border:1px solid #ddd;border-radius:4px;font-size:11px;color:#333;">その他</div>
+          </div>
+        </div>
+
+        <div class="list-layout">
+          <!-- Main Content: 商品グリッド -->
+          <div>
+            <div style="font-size:13px;font-weight:bold;color:#293742;margin-bottom:10px;">花束デザインの商品一覧（既存）</div>
+            <div class="prod-grid-sm">
+              <div class="prod-card-sm"><div class="prod-card-img"></div><div class="prod-card-info"><div class="prod-card-name">Mezzo（M）</div><div class="prod-card-price">¥74,800</div></div></div>
+              <div class="prod-card-sm"><div class="prod-card-img" style="background:linear-gradient(#e8e0d0,#d8d0c0);"></div><div class="prod-card-info"><div class="prod-card-name">Grande（L）</div><div class="prod-card-price">¥98,000</div></div></div>
+              <div class="prod-card-sm"><div class="prod-card-img" style="background:linear-gradient(#f0e8e0,#e0d8d0);"></div><div class="prod-card-info"><div class="prod-card-name">Petite（S）</div><div class="prod-card-price">¥54,800</div></div></div>
+              <div class="prod-card-sm"><div class="prod-card-img" style="background:linear-gradient(#e8e0d8,#d8cec8);"></div><div class="prod-card-info"><div class="prod-card-name">Jumeaux（双子）</div><div class="prod-card-price">¥128,000</div></div></div>
+              <div class="prod-card-sm"><div class="prod-card-img" style="background:linear-gradient(#f0e8e0,#e8e0d8);"></div><div class="prod-card-info"><div class="prod-card-name">Adore（アドア）</div><div class="prod-card-price">¥84,800</div></div></div>
+              <div class="prod-card-sm"><div class="prod-card-img" style="background:linear-gradient(#e0e8f0,#d0d8e8);"></div><div class="prod-card-info"><div class="prod-card-name">Feliz（フェリス）</div><div class="prod-card-price">¥68,000</div></div></div>
+            </div>
+          </div>
+
+          <!-- Sidebar -->
+          <div>
+            <!-- ★ 追加提案: 選び方ガイドウィジェット -->
+            <div class="wf-new" style="margin-bottom:12px;">
+              <div class="wf-new-badge">【追加提案】選び方ガイドウィジェット（サイドバー先頭）</div>
+              <div class="sidebar-widget" style="border:none;">
+                <div class="sw-hd">
+                  <div class="sw-hd-title">🤔 どれを選べばいいか迷ったら</div>
+                  <div class="sw-hd-sub">選び方ガイドから探してみましょう</div>
+                </div>
+                <div class="sw-body">
+                  <div class="sw-link"><span class="sw-arr">▶</span><span>🌸 お花の種類から選ぶ</span></div>
+                  <div class="sw-link"><span class="sw-arr">▶</span><span>💐 ブーケの形から選ぶ</span></div>
+                  <div class="sw-link"><span class="sw-arr">▶</span><span>🏺 保存方法から選ぶ</span></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 既存サイドバーコンテンツ -->
+            <div class="sw-existing">
+              <div class="sidebar-widget">
+                <div class="sw-hd"><div class="sw-hd-title">カテゴリ（既存）</div></div>
+                <div class="sw-body">
+                  <div class="sw-link"><span class="sw-arr">▶</span>押し花アート</div>
+                  <div class="sw-link"><span class="sw-arr">▶</span>ボトル保存</div>
+                  <div class="sw-link"><span class="sw-arr">▶</span>フォトフレーム</div>
+                </div>
+              </div>
+              <div style="margin-top:10px;padding:10px;background:white;border:1px solid #ddd;border-radius:5px;font-size:11px;color:#aaa;text-align:center;">その他サイドバーウィジェット（既存）</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-gray" style="height:40px;">以下、フッター</div>
+      </div>
+
+      <div class="ann">
+        <p><strong>📌 実装ポイント：</strong>WordPress管理画面 &gt; 外観 &gt; ウィジェットにてカスタムHTMLウィジェットを「/shopping/ ページ用サイドバー」エリアの先頭に追加。サイドバーが全ページ共通の場合は、<code>is_page('shopping')</code>等の条件分岐で表示制御。または子テーマの <code>sidebar.php</code> を直接編集して条件付き出力も可。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="impl-box">
+    <div class="impl-hd">💻 実装コードスニペット（サイドバーウィジェットHTML）</div>
+    <div class="impl-body">
+      <div class="code-block">
+<span class="c">&lt;!-- 選び方ガイドウィジェット（カスタムHTMLウィジェットとして追加） --&gt;</span>
+<span class="t">&lt;div</span> <span class="a">class</span>=<span class="v">"choice-guide-widget"</span> <span class="a">style</span>=<span class="v">"border:1px solid #ddd;border-radius:6px;overflow:hidden;margin-bottom:20px;"</span><span class="t">&gt;</span>
+  <span class="t">&lt;div</span> <span class="a">style</span>=<span class="v">"background:#293742;color:white;padding:10px 14px;"</span><span class="t">&gt;</span>
+    <span class="t">&lt;div</span> <span class="a">style</span>=<span class="v">"font-weight:bold;font-size:13px;"</span><span class="t">&gt;</span>🤔 どれを選べばいいか迷ったら<span class="t">&lt;/div&gt;</span>
+    <span class="t">&lt;div</span> <span class="a">style</span>=<span class="v">"font-size:11px;color:rgba(255,255,255,0.65);margin-top:2px;"</span><span class="t">&gt;</span>選び方ガイドから探してみましょう<span class="t">&lt;/div&gt;</span>
+  <span class="t">&lt;/div&gt;</span>
+  <span class="t">&lt;div</span> <span class="a">style</span>=<span class="v">"padding:10px 12px;background:white;"</span><span class="t">&gt;</span>
+    <span class="t">&lt;a</span> <span class="a">href</span>=<span class="v">"/choice_flower"</span> <span class="a">style</span>=<span class="v">"display:block;padding:8px 0;border-bottom:1px solid #f0f0f0;font-size:12px;color:#333;"</span><span class="t">&gt;</span>▶ 🌸 お花の種類から選ぶ<span class="t">&lt;/a&gt;</span>
+    <span class="t">&lt;a</span> <span class="a">href</span>=<span class="v">"/choice_shape"</span>  <span class="a">style</span>=<span class="v">"display:block;padding:8px 0;border-bottom:1px solid #f0f0f0;font-size:12px;color:#333;"</span><span class="t">&gt;</span>▶ 💐 ブーケの形から選ぶ<span class="t">&lt;/a&gt;</span>
+    <span class="t">&lt;a</span> <span class="a">href</span>=<span class="v">"/choice_method"</span> <span class="a">style</span>=<span class="v">"display:block;padding:8px 0;font-size:12px;color:#333;"</span><span class="t">&gt;</span>▶ 🏺 保存方法から選ぶ<span class="t">&lt;/a&gt;</span>
+  <span class="t">&lt;/div&gt;</span>
+<span class="t">&lt;/div&gt;</span></div>
+    </div>
+  </div>
+</div><!-- /TAB 5 -->
+
+
+<!-- ===== FOOTER ===== -->
+<div style="background:#293742;color:rgba(255,255,255,0.5);text-align:center;padding:18px;font-size:11.5px;margin-top:30px;">
+  シンフラワー｜選び方コンテンツへの導線強化 WF提案 ／ 作成：めぐみや ／ 2026年3月21日
+</div>
+
+<script>
+document.querySelectorAll('.tab-btn').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    var tab = btn.getAttribute('data-tab');
+    document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+    document.querySelectorAll('.tab-panel').forEach(function(p) { p.classList.remove('active'); });
+    btn.classList.add('active');
+    document.querySelector('.tab-panel[data-panel="' + tab + '"]').classList.add('active');
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  });
+});
+</script>
+
+</body>
+</html>

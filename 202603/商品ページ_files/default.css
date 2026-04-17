@@ -1,0 +1,232 @@
+﻿/* ----リセット---- */
+#revico-comment, #revico-star, .revico-widget div, .revico-widget dl, .revico-widget dt, .revico-widget dd, .revico-widget ul, .revico-widget ol, .revico-widget li, .revico-widget h1, .revico-widget h2, .revico-widget h3, .revico-widget h4, .revico-widget h5, .revico-widget h6, .revico-widget pre, .revico-widget code, .revico-widget form, .revico-widget fieldset, .revico-widget figure, .revico-widget legend, .revico-widget input, .revico-widget textarea, .revico-widget p, .revico-widget blockquote, .revico-widget th, .revico-widget td, .revico-multicomment-top {
+    margin: 0;
+    padding: 0;
+}
+.revico-widget a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+.revico-widget table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+.revico-widget figure, .revico-widget footer, .revico-widget header, .revico-widget nav, .revico-widget section {
+    display:block;
+}
+.revico-widget fieldset, .revico-widget img {
+	border:0;
+}
+.revico-widget address, .revico-widget caption, .revico-widget cite, .revico-widget code, .revico-widget dfn, .revico-widget em, .revico-widget strong, .revico-widget th, .revico-widget var {
+	font-style:normal;
+	font-weight:normal;
+}
+.revico-widget ol, .revico-widget ul, .revico-widget li {
+	list-style:none;
+}
+.revico-widget caption, .revico-widget th {
+	text-align:left;
+}
+.revico-widget h1, .revico-widget h2, .revico-widget h3, .revico-widget h4, .revico-widget h5, .revico-widget h6 {
+	font-size:100%;
+	font-weight:normal;
+}
+.revico-widget q:before, .revico-widget q:after {
+	content:'';
+}
+.revico-widget abbr, .revico-widget acronym {
+	border:0;
+	font-variant:normal;
+}
+/* to preserve line-height and selector appearance */
+.revico-widget sup {
+	vertical-align:text-top;
+}
+.revico-widget sub {
+	vertical-align:text-bottom;
+}
+.revico-widget input, .revico-widget textarea, .revico-widget select {
+	font-family:inherit;
+	font-size:inherit;
+	font-weight:inherit;
+}
+/*because legend doesn't inherit in IE */
+.revico-widget legend {
+	color:#000;
+}
+
+.revico-widget input, .revico-widget select {
+    vertical-align:middle;
+}
+
+.revico-widget img {
+    vertical-align: top;
+    font-size: 0;
+    line-height: 0;
+}
+
+.revico-widget *,  .revico-widget *:before, .revico-widget *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/* iOSの「type="submit" or type="button"が設定されたinputでは勝手に角丸&グラデーション加工される」を防止するため */
+.revico-widget input[type="submit"],
+.revico-widget input[type="button"] {
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+/*
+ * 全体
+*/
+.revico-widget {
+    font-family: "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W6", "Hiragino Kaku Gothic Pro", Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+}
+/*
+ * ローディング
+ */
+.revico-loading-container {
+    position: relative;
+    margin: 10px;
+    height: 20px;
+}
+
+.revico-loading {
+    background-color: #FFF;
+    opacity: 0.5;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+    .revico-loading .ball-pulse {
+        text-align: center;
+        margin-top: 0px;
+        margin-left: -40px;
+        position: absolute;
+        width: 80px;
+        left: 50%;
+        top: 50%;
+        z-index: 900;
+    }
+
+        .revico-loading .ball-pulse > div:nth-child(1) {
+            -webkit-animation-name: scaleAnimation;
+            -webkit-animation-delay: -0.24s;
+            -webkit-animation-duration: 0.75s;
+            -webkit-animation-iteration-count: infinite;
+            -moz-animation-name: scaleAnimation;
+            -moz-animation-delay: -0.24s;
+            -moz-animation-duration: 0.75s;
+            -moz-animation-iteration-count: infinite;
+            -ms-animation-name: scaleAnimation;
+            -ms-animation-delay: -0.24s;
+            -ms-animation-duration: 0.75s;
+            -ms-animation-iteration-count: infinite;
+            animation-name: scaleAnimation;
+            animation-delay: -0.24s;
+            animation-duration: 0.75s;
+            animation-iteration-count: infinite;
+        }
+
+        .revico-loading .ball-pulse > div:nth-child(2) {
+            -webkit-animation-name: scaleAnimation;
+            -webkit-animation-delay: -0.12s;
+            -webkit-animation-duration: 0.75s;
+            -webkit-animation-iteration-count: infinite;
+            -moz-animation-name: scaleAnimation;
+            -moz-animation-delay: -0.12s;
+            -moz-animation-duration: 0.75s;
+            -moz-animation-iteration-count: infinite;
+            -ms-animation-name: scaleAnimation;
+            -ms-animation-delay: -0.12s;
+            -ms-animation-duration: 0.75s;
+            -ms-animation-iteration-count: infinite;
+            animation-name: scaleAnimation;
+            animation-delay: -0.12s;
+            animation-duration: 0.75s;
+            animation-iteration-count: infinite;
+        }
+
+        .revico-loading .ball-pulse > div:nth-child(3) {
+            -webkit-animation-name: scaleAnimation;
+            -webkit-animation-delay: 0s;
+            -webkit-animation-duration: 0.75s;
+            -webkit-animation-iteration-count: infinite;
+            -moz-animation-name: scaleAnimation;
+            -moz-animation-delay: 0s;
+            -moz-animation-duration: 0.75s;
+            -moz-animation-iteration-count: infinite;
+            -ms-animation-name: scaleAnimation;
+            -ms-animation-delay: 0s;
+            -ms-animation-duration: 0.75s;
+            -ms-animation-iteration-count: infinite;
+            animation-name: scaleAnimation;
+            animation-delay: 0s;
+            animation-duration: 0.75s;
+            animation-iteration-count: infinite;
+        }
+
+
+@-webkit-keyframes scaleAnimation {
+    0% {
+        -webkit-transform: scale(0.2);
+    }
+
+    100% {
+        -webkit-transform: scale(1.2);
+    }
+}
+
+@-moz-keyframes scaleAnimation {
+    0% {
+        -moz-transform: scale(0.2);
+    }
+
+    100% {
+        -moz-transform: scale(1.2);
+    }
+}
+
+@-ms-keyframes scaleAnimation {
+    0% {
+        -ms-transform: scale(0.2);
+    }
+
+    100% {
+        -ms-transform: scale(1.2);
+    }
+}
+
+@keyframes scaleAnimation {
+    0% {
+        transform: scale(0.2);
+    }
+
+    100% {
+        transform: scale(1.2);
+    }
+}
+
+.revico-loading .ball-pulse > div {
+    background-color: #AAA;
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    margin: 2px;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    -ms-animation-fill-mode: both;
+    animation-fill-mode: both;
+    display: inline-block;
+}
+
+.revico-logo-onmouse {
+    cursor: pointer;
+}

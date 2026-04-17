@@ -1,0 +1,239 @@
+﻿/* Modal
+ * =============================== */
+.revico-modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: left;
+    /*background: rgba(0,0,0, .9);*/
+    transition: opacity .25s ease;
+    z-index: 999;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.revico-modal__bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    cursor: pointer;
+    opacity: 0.7;
+    background: black;
+}
+
+.revico-modal-state {
+    display: none;
+}
+
+.revico-modal-state:checked ~ .revico-modal {
+    opacity: 1;
+    visibility: visible;
+    display: block;
+    transition: visibility .25s ease, opacity .25s ease;
+}
+
+.revico-modal-state:checked ~ .revico-modal .revico-modal__inner {
+    top: 0;
+}
+
+.revico-alert-modal-state {
+    display: none;
+}
+
+.revico-alert-modal-state:checked + .revico-modal {
+    opacity: 1;
+    visibility: visible;
+    display:block;
+    transition: visibility .25s ease, opacity .25s ease;
+}
+
+.revico-alert-modal-state:checked + .revico-modal .revico-modal__inner {
+    top: 0;
+}
+
+.revico-modal__inner {
+    transition: top .25s ease;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    max-width: 800px;
+    margin: auto;
+    background: #fff;
+    padding: 1.5%;
+    max-height: 80%;
+	margin-top: 60px;
+	overflow-y: scroll;
+	height: fit-content;
+}
+
+.revico-modal__close {
+    font-family: "open sans", "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "YuGothic Medium", "游ゴシック", "Yu Gothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
+    color: #ddd;
+    font-size: 32px;
+    text-align: center;
+    line-height: 1.1;
+    position: absolute;
+    right: calc((100vw - 800px) / 2 - 28px);
+    top: 2.5%;
+    width: 1.1em;
+    height: 1.1em;
+    cursor: pointer;
+    z-index: 1001;
+	-webkit-font-smoothing: antialiased;
+}
+.revico-modal-content {
+    font-family: "open sans", "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "YuGothic Medium", "游ゴシック", "Yu Gothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
+    color: #595959;
+    font-size: 12px;
+}
+
+
+@media screen and (max-width: 768px) {
+
+    .revico-modal__inner {
+        max-width: 90%;
+        box-sizing: border-box;
+		margin-top: 8rem;
+		padding: 4%;
+	    box-shadow: 1px 1px 10px #000;
+    }
+	.revico-modal .revico-modal__close {
+	font-size: 2.5rem;
+    right: 2.5%;
+    top: 7.5%;
+    }
+}
+
+.revico-modal-overflow-hidden {
+    overflow: hidden !important;
+}
+
+/* Modal_Contents
+ * =============================== */
+
+
+.revico-modal .revico-modal-content {
+    height: fit-content;
+    overflow: scroll;
+}
+
+    .revico-modal .revico-modal-content .revico-review-wrapper {
+        width: 100%;
+        position: relative;
+        height: 100%;
+    }
+
+    .revico-modal .revico-modal-content .revico-review-detail {
+        width: 300px;
+        float: right;
+        padding: 5px;
+        overflow-y: auto;
+        height: 100%;
+        font-size: 13px;
+    }
+
+@media screen and (max-width: 768px) {
+    .revico-modal .revico-modal-content .revico-review-detail {
+        position: absolute;
+        width: 100%;
+    }
+}
+
+.revico-modal .revico-modal-content .revico-review-detail .revico-product-name {
+    font-size: 1em;
+    font-weight: 200;
+}
+
+.revico-modal .revico-modal-content .revico-review-detail .revico-pic-image {
+    position: absolute;
+    margin-right: 310px;
+    left: 0;
+    top: 0;
+    height: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    .revico-modal .revico-modal-content .revico-review-detail .revico-pic-image {
+        position: relative;
+        margin-right: 0;
+        height: 200px;
+    }
+}
+
+.revico-modal .revico-modal-content .revico-review-detail .revico-pic-image img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.revico-modal .revico-modal-content .revico-review-detail .revico-star-rate-date {
+    display: flex;
+    justify-content: flex-start;
+    height: 30px;
+}
+
+.revico-modal .revico-modal-content .revico-review-detail .revico-star-rate {
+    transform: scale(0.5);
+    transform-origin: top left;
+    width: 30%;
+}
+
+.revico-modal .revico-modal-content .revico-review-detail .revico-review-date {
+    font-size: 0.5em;
+}
+
+.revico-modal .revico-modal-content .revico-review-detail .revico-reviewer-name-purchased {
+    display: flex;
+    justify-content: flex-start;
+    height: 20px;
+}
+
+.revico-modal .revico-modal-content .revico-review-detail .revico-reviewer-name {
+    margin-right: 10px;
+}
+
+.revico-modal .revico-modal-content .revico-review-detail .revico-purchased {
+    font-weight: bold;
+    color: orange
+}
+
+.revico-modal .revico-modal-content .revico-review-detail .revico-review-title {
+    font-weight: bold;
+    height: 25px;
+}
+
+.revico-modal .revico-modal-content .revico-review-detail .revico-images ul {
+    padding-left: 0;
+}
+
+.revico-modal .revico-modal-content .revico-review-detail .revico-images li {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    position: relative;
+    margin-right: 3px;
+}
+
+.revico-modal .revico-modal-content .revico-review-detail .revico-images img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 200%
+}
+.revico-modal-content button{
+	width: 85%;
+	display: flex;
+	justify-content: center;
+	margin: 0 auto;
+}
