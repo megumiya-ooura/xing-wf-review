@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta name="robots" content="noindex,nofollow">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=1280">
 <title>アフターブーケとは｜ブーケ・花束の保存専門店 シンフラワー</title>
@@ -425,6 +424,101 @@
   .step-num { font-size: 11px; color: #B10A0A; letter-spacing: 0.1em; margin-bottom: 8px; }
   .step-title { font-size: 14px; font-weight: 700; color: #2a2a2a; margin-bottom: 6px; }
   .step-desc { font-size: 12px; color: #888; line-height: 1.6; }
+
+  /* ===== 拠点案内カード ===== */
+  .location-card {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    background: #fff;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+  }
+  .location-card-img {
+    background: #e0e0e0;
+    min-height: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-size: 13px;
+    text-align: center;
+    line-height: 1.6;
+  }
+  .location-card-body { padding: 28px 28px 24px; }
+  .location-tag {
+    display: inline-block;
+    background: #f5f0eb;
+    color: #B10A0A;
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    letter-spacing: 0.05em;
+  }
+  .location-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: #2a2a2a;
+    margin-bottom: 6px;
+  }
+  .location-sub {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 14px;
+    letter-spacing: 0.05em;
+  }
+  .location-info { list-style: none; margin-bottom: 16px; }
+  .location-info li {
+    display: flex;
+    gap: 10px;
+    padding: 6px 0;
+    font-size: 13px;
+    color: #555;
+    line-height: 1.7;
+    border-bottom: 1px dashed #eee;
+  }
+  .location-info li:last-child { border-bottom: none; }
+  .location-info-label {
+    font-size: 11px;
+    color: #B10A0A;
+    font-weight: 700;
+    flex-shrink: 0;
+    width: 64px;
+    padding-top: 2px;
+    letter-spacing: 0.08em;
+  }
+  .location-feature {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 16px;
+  }
+  .location-feature span {
+    font-size: 11px;
+    color: #555;
+    background: #f7f3ee;
+    padding: 4px 10px;
+    border-radius: 3px;
+  }
+  .location-online {
+    background: #f5f0eb;
+    border-radius: 4px;
+    padding: 24px 28px;
+    margin-top: 24px;
+    text-align: center;
+  }
+  .location-online h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #2a2a2a;
+    margin-bottom: 6px;
+  }
+  .location-online p {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.7;
+  }
 
   /* ===== 判断基準リスト ===== */
   .judge-list { list-style: none; margin-top: 24px; }
@@ -1023,11 +1117,94 @@
 
 
 <!-- ============================= -->
-<!-- SEC 9: よくある質問           -->
+<!-- SEC 9: 拠点案内（東京・岡山） -->
 <!-- ============================= -->
 <section class="section-alt">
   <div class="section-inner">
-    <span class="wf-label">SEC 9 ／ よくある質問</span>
+    <span class="wf-label">SEC 9 ／ 拠点案内</span>
+    <div class="section-title">
+      <span class="en">Locations</span>
+      <h2>実物をご覧いただける拠点</h2>
+      <p class="sub">東京虎ノ門サロン・岡山本社の2拠点で、実際の作品をご覧いただきながらご相談いただけます。<br>もちろん全国どこからでも、郵送・オンラインでのご注文・ご相談も承っております。</p>
+    </div>
+
+    <div class="grid-2" style="gap:24px; margin-top:32px;">
+      <!-- 東京虎ノ門サロン -->
+      <div class="location-card">
+        <div class="location-card-img">
+          【拠点写真】<br>東京虎ノ門サロン<br>外観・店内
+        </div>
+        <div class="location-card-body">
+          <span class="location-tag">東京</span>
+          <p class="location-name">東京虎ノ門サロン</p>
+          <p class="location-sub">Tokyo Toranomon Salon</p>
+          <ul class="location-info">
+            <li><span class="location-info-label">所在地</span><span>東京都港区虎ノ門〇-〇-〇</span></li>
+            <li><span class="location-info-label">アクセス</span><span>東京メトロ虎ノ門駅から徒歩〇分</span></li>
+            <li><span class="location-info-label">営業時間</span><span>10:00〜18:15／年中無休</span></li>
+            <li><span class="location-info-label">予約</span><span>来店予約優先（オンライン・お電話で予約可）</span></li>
+          </ul>
+          <div class="location-feature">
+            <span>✓ 実物の展示</span>
+            <span>✓ 専属デザイナーによる相談</span>
+            <span>✓ お花の持ち込みOK</span>
+          </div>
+          <div class="btn-group" style="justify-content:flex-start;">
+            <a href="https://www.xing-flower.com/" class="btn btn-outline">東京サロンの詳細を見る</a>
+            <a href="https://www.xing-flower.com/" class="btn btn-outline">来店予約をする</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 岡山本社・工房 -->
+      <div class="location-card">
+        <div class="location-card-img">
+          【拠点写真】<br>岡山本社・工房<br>外観・制作風景
+        </div>
+        <div class="location-card-body">
+          <span class="location-tag">岡山</span>
+          <p class="location-name">岡山本社・フラワー工房</p>
+          <p class="location-sub">Okayama Headquarters & Atelier</p>
+          <ul class="location-info">
+            <li><span class="location-info-label">所在地</span><span>岡山県〇〇市〇〇〇-〇</span></li>
+            <li><span class="location-info-label">アクセス</span><span>JR〇〇駅から徒歩〇分／お車でのご来店も可</span></li>
+            <li><span class="location-info-label">営業時間</span><span>10:00〜18:15／年中無休</span></li>
+            <li><span class="location-info-label">予約</span><span>来店予約優先（オンライン・お電話で予約可）</span></li>
+          </ul>
+          <div class="location-feature">
+            <span>✓ 制作工房を見学可能</span>
+            <span>✓ 52名の専門スタッフ体制</span>
+            <span>✓ お花の持ち込みOK</span>
+          </div>
+          <div class="btn-group" style="justify-content:flex-start;">
+            <a href="https://www.xing-flower.com/" class="btn btn-outline">岡山本社の詳細を見る</a>
+            <a href="https://www.xing-flower.com/" class="btn btn-outline">来店予約をする</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 全国対応の補足 -->
+    <div class="location-online">
+      <h3>遠方の方も全国対応・郵送OK</h3>
+      <p>ご来店が難しい方も、郵送でのお花のお預かり・オンラインでのご相談を承っております。<br>北海道から沖縄まで、これまで7万件以上のお客様にご利用いただいております。</p>
+      <div class="btn-group" style="justify-content:center; margin-top:18px;">
+        <a href="https://www.xing-flower.com/sending" class="btn btn-outline">お手元のブーケの送付方法</a>
+        <a href="https://www.xing-flower.com/" class="btn btn-outline">オンラインで相談する</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+
+<!-- ============================= -->
+<!-- SEC 10: よくある質問          -->
+<!-- ============================= -->
+<section class="section-alt">
+  <div class="section-inner">
+    <span class="wf-label">SEC 10 ／ よくある質問</span>
     <div class="section-title">
       <span class="en">FAQ</span>
       <h2>よくある質問</h2>
@@ -1101,7 +1278,7 @@
 <!-- SEC 10: CTAエリア             -->
 <!-- ============================= -->
 <div class="cta-section">
-  <span class="wf-label">SEC 10 ／ CTAエリア</span>
+  <span class="wf-label">SEC 11 ／ CTAエリア</span>
   <h2>大切な花束を、一生残しませんか</h2>
   <p>
     保存方法のご相談・商品の詳細・来店予約など、お気軽にお問い合わせください。<br>
