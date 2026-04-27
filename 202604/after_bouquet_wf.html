@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=1280">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>アフターブーケとは｜ブーケ・花束の保存専門店 シンフラワー</title>
 <!-- 既存サイトのCSSを読み込む（index.htmlと同じ順序） -->
 <link rel="stylesheet" href="./プロポーズ花束・結婚式ブーケ保存専門｜シンフラワー｜アフターブーケ・記念花の加工＆特別なフラワーアート制作【全国対応・来店＆オンラインOK】_files/autoptimize_single_297230752c35f804b32dd1b29806928f.css" type="text/css">
@@ -532,6 +532,267 @@
     color: #444;
   }
   .judge-check { width: 24px; height: 24px; background: #B10A0A; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 12px; flex-shrink: 0; }
+
+  /* ============================================= */
+  /* レスポンシブ（タブレット 〜 モバイル）        */
+  /* ============================================= */
+
+  /* ----- タブレット（〜1024px） ----- */
+  @media (max-width: 1024px) {
+    .section,
+    .section-inner {
+      padding: 56px 24px;
+    }
+    .grid-3 {
+      grid-template-columns: 1fr 1fr;
+    }
+    .fv-h1 {
+      font-size: 28px;
+    }
+    .section-title h2 {
+      font-size: 24px;
+    }
+  }
+
+  /* ----- モバイル（〜768px） ----- */
+  @media (max-width: 768px) {
+    /* ===== 既存サイトCSSの上書き：横幅制限を解除 ===== */
+    body, html {
+      width: 100% !important;
+      min-width: 0 !important;
+      overflow-x: hidden;
+    }
+    #headerbox,
+    #header,
+    .header-bottom {
+      width: 100% !important;
+      max-width: 100% !important;
+      min-width: 0 !important;
+    }
+
+    /* ===== ヘッダーをモバイル用にシンプル化 ===== */
+    #header {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      padding: 12px 16px !important;
+      flex-wrap: wrap !important;
+      height: auto !important;
+    }
+    .logo-page {
+      flex: 0 0 auto !important;
+      width: auto !important;
+      margin: 0 !important;
+    }
+    .logo-page h1 img {
+      width: 100px !important;
+      height: auto !important;
+    }
+    .logo-page h2 { display: none !important; }
+    /* デスクトップ用ナビは非表示 */
+    .menu-list {
+      display: none !important;
+    }
+    .contact-info {
+      display: flex !important;
+      gap: 8px !important;
+      flex: 0 0 auto !important;
+      width: auto !important;
+    }
+    .contact-info a {
+      width: auto !important;
+      padding: 4px !important;
+    }
+    .contact-info a img {
+      width: 22px !important;
+      height: 22px !important;
+    }
+    .contact-info a p {
+      font-size: 9px !important;
+      margin: 0 !important;
+    }
+    .contact-info a#htel,
+    .contact-info a.alpha {
+      display: none !important;
+    }
+    .header-bottom {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      border-top: 1px solid #eee;
+    }
+    .header-bottom ul {
+      display: flex !important;
+      flex-wrap: nowrap !important;
+      width: max-content !important;
+      max-width: none !important;
+      padding: 0 12px;
+    }
+    .header-bottom ul li {
+      flex: 0 0 auto !important;
+      width: auto !important;
+      padding: 8px 12px !important;
+      font-size: 11px !important;
+      white-space: nowrap;
+    }
+    .header-bottom ul li a {
+      font-size: 11px !important;
+    }
+    .header-bottom ul li br { display: none; }
+
+    /* ===== パンくず ===== */
+    #tree {
+      padding: 8px 16px;
+      font-size: 11px;
+    }
+
+    /* ===== セクション共通 ===== */
+    .section,
+    .section-inner {
+      padding: 48px 16px;
+    }
+    .section-title { margin-bottom: 28px; }
+    .section-title h2 { font-size: 20px; }
+    .section-title .sub { font-size: 13px; }
+    .section-title .sub br { display: none; }
+
+    /* ===== グリッドを縦積みに ===== */
+    .grid-2,
+    .grid-3 {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    /* ===== ボタングループ ===== */
+    .btn-group {
+      gap: 10px;
+      margin-top: 24px;
+    }
+    .btn {
+      padding: 12px 20px !important;
+      font-size: 13px !important;
+      width: 100%;
+    }
+
+    /* ===== FV ===== */
+    .fv-inner {
+      grid-template-columns: 1fr;
+      min-height: auto;
+    }
+    .fv-text {
+      padding: 40px 20px 32px;
+    }
+    .fv-h1 { font-size: 24px; line-height: 1.5; }
+    .fv-h1 br { display: none; }
+    .fv-sub { font-size: 13px; line-height: 1.8; }
+    .fv-sub br { display: none; }
+    .fv-image {
+      min-height: 240px;
+      order: -1;
+    }
+    .fv-trust { font-size: 11px; }
+
+    /* ===== ステップフロー：横→縦 ===== */
+    .step-row {
+      flex-direction: column;
+      gap: 12px;
+    }
+    .step-item {
+      border-right: 1px solid #ddd !important;
+      padding: 16px;
+    }
+    .step-item::after {
+      content: "↓";
+      right: 50%;
+      top: auto;
+      bottom: -16px;
+      transform: translateX(50%);
+    }
+
+    /* ===== カード類のpadding調整 ===== */
+    .product-card-img,
+    .case-card-img { height: 180px; }
+    .product-card-body,
+    .case-card-body,
+    .recommend-card { padding: 16px; }
+    .trust-card {
+      padding: 16px;
+      gap: 12px;
+    }
+    .trust-icon { width: 48px; height: 48px; font-size: 20px; }
+
+    /* ===== 数値カウンター ===== */
+    .stats-row { gap: 24px; }
+    .stat-number { font-size: 28px; }
+    .stat-unit { font-size: 13px; }
+    .stat-label { font-size: 11px; }
+
+    /* ===== FAQ ===== */
+    .faq-q { font-size: 14px; }
+    .faq-a {
+      font-size: 13px;
+      padding-left: 32px;
+    }
+    .faq-q .q-mark {
+      width: 24px;
+      height: 24px;
+      font-size: 12px;
+    }
+
+    /* ===== ナビカード（選び方） ===== */
+    .nav-block { grid-template-columns: 1fr; }
+
+    /* ===== 拠点案内カード ===== */
+    .location-card {
+      grid-template-columns: 1fr;
+    }
+    .location-card-img {
+      min-height: 200px;
+    }
+    .location-card-body { padding: 20px; }
+    .location-name { font-size: 16px; }
+    .location-info-label {
+      width: 56px;
+      font-size: 10px;
+    }
+    .location-info li { font-size: 12px; }
+    .location-online {
+      padding: 20px 16px;
+      margin-top: 20px;
+    }
+
+    /* ===== CTAエリア ===== */
+    .cta-section { padding: 48px 16px; }
+    .cta-section h2 { font-size: 20px; }
+    .cta-section p { font-size: 13px; }
+
+    /* ===== WFラベル ===== */
+    .wf-label { font-size: 9px; }
+
+    /* ===== フッター ===== */
+    #footer .max,
+    #fnav,
+    #homefooter,
+    #fn > div {
+      max-width: 100% !important;
+      width: 100% !important;
+      padding-left: 16px !important;
+      padding-right: 16px !important;
+    }
+  }
+
+  /* ----- 小型モバイル（〜480px） ----- */
+  @media (max-width: 480px) {
+    .section,
+    .section-inner {
+      padding: 40px 14px;
+    }
+    .fv-h1 { font-size: 22px; }
+    .section-title h2 { font-size: 18px; }
+    .stat-number { font-size: 24px; }
+    .btn-group {
+      flex-direction: column;
+    }
+  }
 </style>
 </head>
 <body>
