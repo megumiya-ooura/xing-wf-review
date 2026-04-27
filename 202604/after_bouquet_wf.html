@@ -662,8 +662,26 @@
     .grid-2,
     .grid-3,
     .grid-4 {
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr !important;
       gap: 16px;
+    }
+
+    /* ===== 比較表：横スクロール ===== */
+    .compare-table-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin-left: -16px;
+      margin-right: -16px;
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+    .compare-table {
+      min-width: 600px;
+      font-size: 12px;
+    }
+    .compare-table th,
+    .compare-table td {
+      padding: 8px 6px !important;
     }
 
     /* ===== ボタングループ ===== */
@@ -1012,6 +1030,7 @@
 
     <!-- 比較表 -->
     <h3 style="font-size:17px; font-weight:700; color:#2a2a2a; margin-bottom:16px; text-align:center;">4つの保存方法を比較する</h3>
+    <div class="compare-table-wrap">
     <table class="compare-table">
       <thead>
         <tr>
@@ -1067,6 +1086,7 @@
         </tr>
       </tbody>
     </table>
+    </div>
 
     <!-- 別の選び方ナビ -->
     <div style="margin-top:48px; padding:32px; background:#fff; border:1px solid #e0dbd6; border-radius:4px;">
